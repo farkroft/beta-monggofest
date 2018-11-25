@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: MyString
+  image: MyString
+  province: one
+  product_type: one
+
+two:
+  type: 
+  name: MyString
+  image: MyString
+  province: two
+  product_type: two

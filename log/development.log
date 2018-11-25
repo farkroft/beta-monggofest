@@ -1,0 +1,64 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductTypes (20181125165743)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "product_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181125165743_create_product_types.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductTypes (20181125165743)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (110.2ms)[0m  [1m[35mCREATE TABLE "product_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181125165743_create_product_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181125165743"]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProvinces (20181125165818)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (102.9ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181125165818_create_provinces.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181125165818"]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProducts (20181125165910)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (144.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "type" character varying, "name" character varying, "image" character varying, "province_id" bigint, "product_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3c5d8b73af"
+FOREIGN KEY ("province_id")
+  REFERENCES "provinces" ("id")
+, CONSTRAINT "fk_rails_8464b8e5d7"
+FOREIGN KEY ("product_type_id")
+  REFERENCES "product_types" ("id")
+)[0m
+  ↳ db/migrate/20181125165910_create_products.rb:3
+  [1m[35m (95.4ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_province_id" ON "products"  ("province_id")[0m
+  ↳ db/migrate/20181125165910_create_products.rb:3
+  [1m[35m (42.2ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_product_type_id" ON "products"  ("product_type_id")[0m
+  ↳ db/migrate/20181125165910_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181125165910"]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
