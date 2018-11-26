@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_11_25_165910) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "type"
     t.string "name"
     t.string "image"
     t.bigint "province_id"
