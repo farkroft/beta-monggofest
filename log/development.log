@@ -607,3 +607,77 @@ Processing by Api::V1::ProvincesController#index as */*
 Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 8.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+Started GET "/api/v1/products" for 127.0.0.1 at 2018-11-26 16:19:09 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/v1/products_controller.rb:6
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/v1/products" for 127.0.0.1 at 2018-11-26 16:19:11 +0700
+Processing by Api::V1::ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/v1/products_controller.rb:6
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/product_types" for 127.0.0.1 at 2018-11-26 16:19:15 +0700
+Processing by Api::V1::ProductTypesController#index as HTML
+  [1m[36mProductType Load (0.9ms)[0m  [1m[34mSELECT "product_types".* FROM "product_types"[0m
+  ↳ app/controllers/api/v1/product_types_controller.rb:5
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/product_types" for 127.0.0.1 at 2018-11-26 16:19:17 +0700
+Processing by Api::V1::ProductTypesController#index as HTML
+  [1m[36mProductType Load (0.8ms)[0m  [1m[34mSELECT "product_types".* FROM "product_types"[0m
+  ↳ app/controllers/api/v1/product_types_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/product_types" for 127.0.0.1 at 2018-11-26 16:19:20 +0700
+Processing by Api::V1::ProductTypesController#index as HTML
+  [1m[36mProductType Load (1.0ms)[0m  [1m[34mSELECT "product_types".* FROM "product_types"[0m
+  ↳ app/controllers/api/v1/product_types_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/product_types" for 127.0.0.1 at 2018-11-26 16:19:21 +0700
+Processing by Api::V1::ProductTypesController#index as HTML
+  [1m[36mProductType Load (0.4ms)[0m  [1m[34mSELECT "product_types".* FROM "product_types"[0m
+  ↳ app/controllers/api/v1/product_types_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/provinces" for 127.0.0.1 at 2018-11-26 16:19:28 +0700
+Processing by Api::V1::ProvincesController#index as */*
+  Parameters: {"province"=>{}}
+  [1m[36mProvince Load (0.6ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  ↳ app/controllers/api/v1/provinces_controller.rb:5
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/product_types" for 127.0.0.1 at 2018-11-26 16:19:39 +0700
+Processing by Api::V1::ProductTypesController#index as */*
+  Parameters: {"product_type"=>{}}
+  [1m[36mProductType Load (0.7ms)[0m  [1m[34mSELECT "product_types".* FROM "product_types"[0m
+  ↳ app/controllers/api/v1/product_types_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
