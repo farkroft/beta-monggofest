@@ -1,48 +1,47 @@
 class Api::V1::ProvincesController < ApplicationController
-    before_action :find_province, only: [:destroy, :show]
-  def index
-    province = Province.all
-    if province.present?
-        render json: province, status: :ok
-    else
-    render json: {message_error: 'province not found'}, status: :unprocessable_entity
+    protect_from_forgery with: :null_session   
+    def index
+        provinces = Province.all
+            if provinces.present?
+                render json: provinces, status: :ok
+            else
+                render json: {message_error: 'province not found'}, status: :unprocessable_entity
+            end
     end
-  end
 
-  def show
-    if @province.present?
-        render json: @province, status: :ok
-    else
-        render json:{message_error: 'province not found'}, status: :unprocessable_entity
+    def show
+        province = Province.find(params[:id])
+            render json: {status:'SUCCESS', message: 'Loaded province', data:province}, status: :ok
     end
-  end
 
-  def destroy
-    if @province
-      @province.destroy!
-      render json: { message: 'success deleted province' }, status: :ok
-    else
-      render json: { message: 'failed deleted province' }, status: :unprocessable_entity
+    def create
+        province = Province.new(province_params)
+        if province.save
+            render json: {status: 200, message:'Saved province', data:province}, status: :ok
+        else
+            render json: {status: 'ERROR', message:'province not saved', data:province.errors}, status: :unprocessable_entity
+        end
     end
-  end
 
-  def create
-    province = Province.new(province_params)
-    if province.save
-      render json: { message: 'success to insert' }, status: :created
-    else
-      render json: { message: 'failed inserted' }, status: :unprocessable_entity
-
+    def destroy
+        province = Province.find(params[:id])
+            if province.destroy!
+                render json: { message: 'success deleted province' }, status: :destroyed
+            else
+                render json: { message: 'failed deleted province' }, status: :unprocessable_entity
+            end
     end
-  end
-
-  private
-
-  def find_province
-    @province = Province.find_by(id: params[:id])
-  end
-
-  def province_params
-    params.require(:province).permit(:name)
-  end
+    
+    def update
+        province = Province.find(params[:id])
+            if province.update_attributes(province_params)
+                render json: { message: 'success to updated' }, status: :updated
+            else
+                render json: { message: 'failed to updated' }, status: :unprocessable_entity
+            end
+    end
+    private
+        def province_params
+            params.require(:province).permit(:name)
+        end
 end

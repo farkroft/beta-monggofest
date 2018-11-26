@@ -1,48 +1,48 @@
 class Api::V1::ProductTypesController < ApplicationController
-    before_action :find_product, only: [:destroy, :show]
-  def index
-    product_type = ProductType.all
-    if product_type.present?
-        render json: product_type, status: :ok
-    else
-    render json: {message_error: 'product_type not found'}, status: :unprocessable_entity
+    protect_from_forgery with: :null_session
+ 
+    def index
+        product_type = ProductType.all
+            if product_type.present?
+                render json: product_type, status: :ok
+            else
+                render json: {message_error: 'product_type not found'}, status: :unprocessable_entity
+            end
     end
-  end
 
-  def show
-    if @product_type.present?
-        render json: @product_type, status: :ok
-    else
-        render json:{message_error: 'product_type not found'}, status: :unprocessable_entity
+    def show
+        product_type = ProductType.find(params[:id])
+            render json: {status:'SUCCESS', message: 'Loaded Product Type', data:product_type}, status: :ok
     end
-  end
 
-  def destroy
-    if @product_type
-      @product_type.destroy!
-      render json: { message: 'success deleted product_type' }, status: :ok
-    else
-      render json: { message: 'failed deleted product_type' }, status: :unprocessable_entity
+    def create
+        product_type = ProductType.new(product_type_params)
+        if product_type.save
+            render json: {status: 'SUCCESS', message:'Saved product type', data:product_type}, status: :ok
+        else
+            render json: {status: 'ERROR', message:'product type not saved', data:product_type.errors}, status: :unprocessable_entity
+        end
     end
-  end
 
-  def create
-    product_type = ProductType.new(product_params)
-    if product_type.save
-      render json: { message: 'success to insert' }, status: :created
-    else
-      render json: { message: 'failed inserted' }, status: :unprocessable_entity
-
+    def destroy
+        product_type = ProductType.find(params[:id])
+            if product_type.destroy!
+                render json: { message: 'success deleted product type' }, status: :destroyed
+            else
+                render json: { message: 'failed deleted product type' }, status: :unprocessable_entity
+            end
     end
-  end
-
-  private
-
-  def find_product_type
-    @product_type = ProductType.find_by(id: params[:id])
-  end
-
-  def product_type_params
-    params.require(:product_type).permit(:name)
-  end
+    
+    def update
+        product_type = ProductType.find(params[:id])
+            if product_type.update_attributes(product_type_params)
+                render json: { message: 'success to updated' }, status: :updated
+            else
+                render json: { message: 'failed to updated' }, status: :unprocessable_entity
+            end
+    end
+    private
+        def product_type_params
+            params.require(:product_type).permit(:name)
+        end
 end

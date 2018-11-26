@@ -1,50 +1,50 @@
 class Api::V1::ProductsController < ApplicationController
-    # frozen_string_literal: true
-    before_action :find_product, only: [:destroy, :show]
-  def index
-    product = Product.all
-    if product.present?
-        render json: product, status: :ok
-    else
-    render json: {message_error: 'product not found'}, status: :unprocessable_entity
+    protect_from_forgery with: :null_session
+    skip_before_action :verify_authenticity_token, raise: false
+ 
+    def index
+        product = Product.all
+            if product.present?
+                render json: product, status: :ok
+            else
+                render json: {message_error: 'product not found'}, status: :unprocessable_entity
+            end
     end
-  end
 
-  def show
-    if @product.present?
-        render json: @product, status: :ok
-    else
-        render json:{message_error: 'product not found'}, status: :unprocessable_entity
+    def show
+        product = Product.find(params[:id])
+            render json: {status:'SUCCESS', message: 'Loaded Product', data:product}, status: :ok
     end
-  end
 
-  def destroy
-    if @product
-      @product.destroy!
-      render json: { message: 'success deleted product' }, status: :ok
-    else
-      render json: { message: 'failed deleted product' }, status: :unprocessable_entity
+    def create
+        product = Product.create(product_params)
+        if product.save
+            render json: {status: 'SUCCESS', message:'Saved Product', data:product}, status: :ok
+        else
+            render json: {status: 'ERROR', message:'Product not saved', data:product.errors}, status: :unprocessable_entity
+        end
     end
-  end
 
-  def create
-    product = Product.new(product_params)
-    if product.save
-      render json: { message: 'success to insert' }, status: :created
-    else
-      render json: { message: 'failed inserted' }, status: :unprocessable_entity
-
+    def destroy
+        product = Product.find(params[:id])
+            if product.destroy!
+                render json: { message: 'success deleted Product' }, status: :destroyed
+            else
+                render json: { message: 'failed deleted Product' }, status: :unprocessable_entity
+            end
     end
-  end
-
-  private
-
-  def find_product
-    @product = Product.find_by(id: params[:id])
-  end
-
-  def product_params
-    params.require(:product).permit(:name, :description, :price, :stock)
-  end
+    
+    def update
+        product = Product.find(params[:id])
+            if product.update_attributes(product_params)
+                render json: { message: 'success to updated' }, status: :updated
+            else
+                render json: { message: 'failed to updated' }, status: :unprocessable_entity
+            end
+    end
+    private
+        def product_params
+            params.permit(:name, :image, :province_id, :product_type_id)
+        end
 end
 
