@@ -1,5 +1,5 @@
-class Api::V1::SliderController < ApplicationController
-    before_action :verify_authenticity_token, except: [:index,:create,:show,:update,:destroy]
+class Api::V1::SlidersController < ApplicationController
+    before_action :verify_authenticity_token, except: [:index]
     before_action :find_slider, only: %i[destroy show update]
 
 # method to create API to show all slider from table
@@ -81,3 +81,5 @@ class Api::V1::SliderController < ApplicationController
     params.require(:slider).permit(:name, :img, :url, :sort_number, :isActive)
   end
 end
+
+
