@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::V1::ProvincesControllerTest < ActionDispatch::IntegrationTest
+class KabupatenTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::V1::ProductTypesControllerTest < ActionDispatch::IntegrationTest
+class DestroyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
