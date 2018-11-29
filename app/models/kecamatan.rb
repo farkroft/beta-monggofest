@@ -1,3 +1,4 @@
 class Kecamatan < ApplicationRecord
-  belongs_to :kabupaten
+  belongs_to :regional
+  has_many :product
 end

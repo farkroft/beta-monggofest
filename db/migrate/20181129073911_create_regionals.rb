@@ -1,6 +1,6 @@
-class CreateKabupatens < ActiveRecord::Migration[5.2]
+class CreateRegionals < ActiveRecord::Migration[5.2]
   def change
-    create_table :kabupatens do |t|
+    create_table :regionals do |t|
       t.references :province, foreign_key: true
       t.string :name
 

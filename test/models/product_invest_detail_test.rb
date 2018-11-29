@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class KabupatenTest < ActiveSupport::TestCase
+class ProductInvestDetailTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
