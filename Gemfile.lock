@@ -53,7 +53,10 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
+<<<<<<< HEAD:Gemfile.lock
     bcrypt (3.1.12)
+=======
+>>>>>>> 5034b204194da3d3b72eb0f0b107f91556062e44:Gemfile.lock
     bindex (0.5.0)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
@@ -241,7 +244,11 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-cors
   rails (~> 5.2.1)
+<<<<<<< HEAD:Gemfile.lock
   rubocop
+=======
+  rubocop (~> 0.60.0)
+>>>>>>> 5034b204194da3d3b72eb0f0b107f91556062e44:Gemfile.lock
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
