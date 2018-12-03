@@ -1,5 +1,5 @@
 class Api::V1::ProductInvestDetailsController < ApplicationController
-	skip_before_action :verify_authenticity_token
+	before_action :authenticate_user
 	before_action :find_proinvdetail, only: [:destroy, :show]
 
 	def index

@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-<<<<<<< HEAD
-=======
+
 # frozen_string_literal: true
 
 begin
@@ -8,7 +7,7 @@ begin
 rescue LoadError => e
   raise unless e.message.include?('spring')
 end
->>>>>>> cb19d3b005146891e8af2f03ea124906efa98627
+
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
 require 'rails/commands'
