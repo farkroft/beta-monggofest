@@ -1,0 +1,22 @@
+stages:
+  - staging
+  - production
+
+staging-state:
+  stage: staging
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$STAGING_APP --api-key=$HEROKU_API_KEY
+    - curl -s -X POST https://api.telegram.org/bot753819662:AAGNPS9tTHw_BWSB9nEy2FVMa45RjpQjbww/sendMessage -d chat_id=-1001311231318 -d text="[Staging-Monggovest-BOT] Deploy Done | Deployed by $GITLAB_USER_NAME | ${CI_COMMIT_SHA:0:8} | $CI_COMMIT_TITLE"  
+
+  only:
+    - develop
+
+production-state:
+  stage: production
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$PRODUCTION_APP --api-key=$HEROKU_API_KEY
+    - curl -s -X POST https://api.telegram.org/bot753819662:AAGNPS9tTHw_BWSB9nEy2FVMa45RjpQjbww/sendMessage -d chat_id=-1001311231318 -d text="[Production-Monggovest-BOT] Deploy Done | Deployed by $GITLAB_USER_NAME | ${CI_COMMIT_SHA:0:8} | $CI_COMMIT_TITLE"  
+  only:
+    - master
