@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
     t.bigint "product_id"
     t.float "price"
     t.integer "slot"
-    t.integer "count_view"
+    t.integer "count_view", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_product_invests_on_product_id"
@@ -74,6 +74,19 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["province_id"], name: "index_regionals_on_province_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest"
+    t.string "role", default: "user", null: false
+    t.datetime "last_login"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.index ["email"], name: "index_users_on_email"
   end
 
   add_foreign_key "kecamatans", "regionals"
