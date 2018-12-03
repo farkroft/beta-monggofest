@@ -10670,3 +10670,588 @@ Processing by Api::V1::ProvincesController#index as */*
 Completed 200 OK in 20ms (Views: 8.4ms | ActiveRecord: 6.4ms)
 
 
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" ORDER BY "provinces"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProvince Load (0.2ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" ORDER BY "provinces"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/provinces" for 127.0.0.1 at 2018-12-01 16:11:06 +0700
+  [1m[35m (44.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ProvincesController#index as */*
+  Parameters: {"province"=>{}}
+  [1m[36mProvince Load (55.1ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  ↳ app/controllers/api/v1/provinces_controller.rb:6
+Completed 200 OK in 141ms (Views: 8.3ms | ActiveRecord: 192.6ms)
+
+
+Started GET "/api/v1/regionals" for 127.0.0.1 at 2018-12-01 16:18:33 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/regionals"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/regionals" for 127.0.0.1 at 2018-12-01 16:19:32 +0700
+  
+ActionController::RoutingError (uninitialized constant Api::V1::RegionalsController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/provinces" for 127.0.0.1 at 2018-12-02 08:09:08 +0700
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ProvincesController#index as */*
+  Parameters: {"province"=>{}}
+  [1m[36mProvince Load (0.6ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  ↳ app/controllers/api/v1/provinces_controller.rb:6
+Completed 200 OK in 28ms (Views: 8.0ms | ActiveRecord: 5.8ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (26.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mProduct Load (39.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/provinces" for 127.0.0.1 at 2018-12-02 15:49:39 +0700
+  [1m[35m (44.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ProvincesController#index as */*
+  Parameters: {"province"=>{}}
+  [1m[36mProvince Load (53.2ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  ↳ app/controllers/api/v1/provinces_controller.rb:6
+Completed 200 OK in 140ms (Views: 6.9ms | ActiveRecord: 191.7ms)
+
+
+Started GET "/api/v1/provinces" for 127.0.0.1 at 2018-12-03 13:38:51 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ProvincesController#index as */*
+  Parameters: {"province"=>{}}
+  [1m[36mProvince Load (49.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  ↳ app/controllers/api/v1/provinces_controller.rb:6
+Completed 200 OK in 89ms (Views: 7.0ms | ActiveRecord: 59.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-12-03 13:44:54 +0700
+  
+NameError (uninitialized constant RailsAdmin):
+Started GET "/admin" for 127.0.0.1 at 2018-12-03 13:45:04 +0700
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2018-12-03 13:46:02 +0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (30.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kecamatans"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY "kecamatans"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (43.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_invests"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductInvest Load (0.2ms)[0m  [1m[34mSELECT  "product_invests".* FROM "product_invests" ORDER BY "product_invests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_invest_details"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductInvestDetail Load (0.2ms)[0m  [1m[34mSELECT  "product_invest_details".* FROM "product_invest_details" ORDER BY "product_invest_details"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_types"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductType Load (0.2ms)[0m  [1m[34mSELECT  "product_types".* FROM "product_types" ORDER BY "product_types"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "provinces"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" ORDER BY "provinces"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (65.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "regionals"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (4.5ms)[0m  [1m[34mSELECT  "regionals".* FROM "regionals" ORDER BY "regionals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (49.3ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.3ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (15.7ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (11.1ms)
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (7.4ms)
+Completed 200 OK in 10705ms (Views: 9399.2ms | ActiveRecord: 189.6ms)
+
+
+Started GET "/admin/product?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:20 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY products.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (49.3ms)
+Completed 200 OK in 81ms (Views: 67.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/product_invest?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:26 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product_invest"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProductInvest Load (0.6ms)[0m  [1m[34mSELECT  "product_invests".* FROM "product_invests" ORDER BY product_invests.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (49.5ms)
+Completed 200 OK in 80ms (Views: 59.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/product?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:27 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY products.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (45.6ms)
+Completed 200 OK in 64ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/product?model_name=product&sort=image&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:30 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"product", "sort"=>"image", "_pjax"=>"[data-pjax-container]"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY products.image asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (42.0ms)
+Completed 200 OK in 59ms (Views: 49.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/kecamatan?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:33 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mKecamatan Load (0.6ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY kecamatans.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (64.5ms)
+Completed 200 OK in 85ms (Views: 75.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/product_invest?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:35 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product_invest"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProductInvest Load (0.5ms)[0m  [1m[34mSELECT  "product_invests".* FROM "product_invests" ORDER BY product_invests.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (36.5ms)
+Completed 200 OK in 53ms (Views: 44.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/product?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:41 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY products.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (47.1ms)
+Completed 200 OK in 69ms (Views: 60.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/product_type?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:43 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product_type"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProductType Load (0.6ms)[0m  [1m[34mSELECT  "product_types".* FROM "product_types" ORDER BY product_types.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (35.5ms)
+Completed 200 OK in 53ms (Views: 44.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/product_invest_detail?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:45 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"product_invest_detail"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProductInvestDetail Load (0.7ms)[0m  [1m[34mSELECT  "product_invest_details".* FROM "product_invest_details" ORDER BY product_invest_details.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (37.2ms)
+Completed 200 OK in 64ms (Views: 45.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/province?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:46 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"province"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mProvince Load (0.6ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" ORDER BY provinces.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (18.6ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 32]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 32]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.4ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 31]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 31]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 30]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 30]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 29]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 29]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 28]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 28]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 27]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 27]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 26]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 26]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 25]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 25]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 24]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 24]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 23]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 23]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 22]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 22]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 21]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 21]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 20]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 20]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 19]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 19]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 18]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 18]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 17]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 17]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 16]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 16]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 15]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 15]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.2ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 14]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 14]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT "regionals".* FROM "regionals" WHERE "regionals"."province_id" = $1[0m  [["province_id", 13]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" INNER JOIN "regionals" ON "kecamatans"."regional_id" = "regionals"."id" WHERE "regionals"."province_id" = $1[0m  [["province_id", 13]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "provinces"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (438.7ms)
+Completed 200 OK in 460ms (Views: 417.0ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/admin/regional?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:48 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"regional"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mRegional Load (0.4ms)[0m  [1m[34mSELECT  "regionals".* FROM "regionals" ORDER BY regionals.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProvince Load (0.5ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces" WHERE "provinces"."id" IN ($1, $2)[0m  [["id", 32], ["id", 31]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 426]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 425]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 424]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 423]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 422]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 421]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 420]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 419]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 418]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 417]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 416]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 415]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 414]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 413]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 412]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 411]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 410]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 409]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 408]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.2ms)[0m  [1m[34mSELECT "kecamatans".* FROM "kecamatans" WHERE "kecamatans"."regional_id" = $1[0m  [["regional_id", 407]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "regionals"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (219.9ms)
+Completed 200 OK in 234ms (Views: 221.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/admin/kecamatan?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:46:55 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mKecamatan Load (0.6ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY kecamatans.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (52.4ms)
+Completed 200 OK in 74ms (Views: 65.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/kecamatan/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:04 +0700
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "regionals"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_select.html.haml (7.7ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY products.id desc[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (8.5ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (7.6ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (54.4ms)
+Completed 200 OK in 82ms (Views: 75.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/kecamatan?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:13 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY kecamatans.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (33.5ms)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:19 +0700
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "kecamatans"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mKecamatan Load (0.3ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY "kecamatans"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_invests"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductInvest Load (0.3ms)[0m  [1m[34mSELECT  "product_invests".* FROM "product_invests" ORDER BY "product_invests"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_invest_details"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductInvestDetail Load (0.4ms)[0m  [1m[34mSELECT  "product_invest_details".* FROM "product_invest_details" ORDER BY "product_invest_details"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_types"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProductType Load (0.3ms)[0m  [1m[34mSELECT  "product_types".* FROM "product_types" ORDER BY "product_types"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "provinces"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" ORDER BY "provinces"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "regionals"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRegional Load (0.3ms)[0m  [1m[34mSELECT  "regionals".* FROM "regionals" ORDER BY "regionals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (17.1ms)
+Completed 200 OK in 51ms (Views: 31.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/kecamatan?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:24 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mKecamatan Load (0.5ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY kecamatans.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (41.1ms)
+Completed 200 OK in 61ms (Views: 49.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/kecamatan/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:27 +0700
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "regionals"[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_select.html.haml (5.6ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (1.6ms)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY products.id desc[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (7.9ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (7.4ms)
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (33.6ms)
+Completed 200 OK in 52ms (Views: 43.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/kecamatan?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:36 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mKecamatan Load (0.4ms)[0m  [1m[34mSELECT  "kecamatans".* FROM "kecamatans" ORDER BY kecamatans.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (38.4ms)
+Completed 200 OK in 54ms (Views: 46.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/kecamatan/export?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-03 13:47:47 +0700
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"kecamatan"}
+  Rendering /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT ''::text AS str;[0m
+  ↳ /home/ndp/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/ndp/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax (26.8ms)
+Completed 200 OK in 66ms (Views: 57.8ms | ActiveRecord: 0.4ms)
+
+

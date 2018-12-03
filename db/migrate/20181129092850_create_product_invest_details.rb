@@ -1,4 +1,5 @@
 class CreateProductInvestDetails < ActiveRecord::Migration[5.2]
+  # frozen_string_literal: true
   def change
     create_table :product_invest_details do |t|
       t.references :product_invest, foreign_key: true

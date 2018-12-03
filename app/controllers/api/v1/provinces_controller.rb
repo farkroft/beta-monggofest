@@ -36,12 +36,12 @@ class Api::V1::ProvincesController < ApplicationController
         else
             render json: { message:'failed deleted province'}, staus: :unprocessable_entity
         end
-    end
+    end */
     #find the province by id
     def find_prov
         @prov = Province.find_by(id: params[:id])
     end
     def prov_params
         params.permit(:name)
-    end */
+    end
 end
