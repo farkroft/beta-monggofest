@@ -1776,3 +1776,115 @@ Migrating to CreateUserInvestors (20181205072620)
   ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "user_investors"[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181205072620"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE TABLE "user_investors" ("id" bigserial primary key, "user_investors_id" bigint, "user_id" bigint, "investor_slot" integer, "investor_pay" float, "invest_year" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7f01be2e81"
+FOREIGN KEY ("user_investors_id")
+  REFERENCES "user_investors" ("id")
+, CONSTRAINT "fk_rails_c692bc9a04"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_user_investors_id" ON "user_investors"  ("user_investors_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_user_id" ON "user_investors"  ("user_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205072620"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (187.7ms)[0m  [1m[35mDROP TABLE "user_investors"[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181205072620"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (33.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (240.3ms)[0m  [1m[35mCREATE TABLE "user_investors" ("id" bigserial primary key, "user_id" bigint, "product_invests_id" bigint, "investor_slot" integer, "investor_pay" float, "invest_year" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c692bc9a04"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_35dabd55ac"
+FOREIGN KEY ("product_invests_id")
+  REFERENCES "product_invests" ("id")
+)[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_user_id" ON "user_investors"  ("user_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_product_invests_id" ON "user_investors"  ("product_invests_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205072620"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23

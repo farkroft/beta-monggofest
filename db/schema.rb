@@ -59,15 +59,15 @@ ActiveRecord::Schema.define(version: 2018_12_05_072620) do
   end
 
   create_table "user_investors", force: :cascade do |t|
-    t.bigint "user_investors_id"
     t.bigint "user_id"
+    t.bigint "product_invests_id"
     t.integer "investor_slot"
     t.float "investor_pay"
     t.integer "invest_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_invests_id"], name: "index_user_investors_on_product_invests_id"
     t.index ["user_id"], name: "index_user_investors_on_user_id"
-    t.index ["user_investors_id"], name: "index_user_investors_on_user_investors_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +86,6 @@ ActiveRecord::Schema.define(version: 2018_12_05_072620) do
   add_foreign_key "product_invests", "products"
   add_foreign_key "products", "product_types"
   add_foreign_key "products", "provinces"
+  add_foreign_key "user_investors", "product_invests", column: "product_invests_id"
+  add_foreign_key "user_investors", "users"
 end
