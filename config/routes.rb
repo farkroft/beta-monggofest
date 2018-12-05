@@ -15,6 +15,13 @@ Rails.application.routes.draw do
       get 'all'                => 'home#all'
       # Get login token from Knock
       post 'user_token' => 'user_token#create'
+      
+      # api for slider
+      get 'sliders', to: 'sliders#index'
+      get 'slider/:id', to: 'sliders#show'
+      post 'sliders', to: 'sliders#create'
+      put 'slider/:id', to: 'sliders#update'
+      delete 'slider/:id', to: 'sliders#destroy'
     end
   end
 end
