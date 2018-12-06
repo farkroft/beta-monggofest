@@ -7,16 +7,15 @@ class Api::V1::PasswordsController < ApplicationController
 
     # Jika Email ada
     @user = User.find_by(email: params[:email])
-
+    token = @user.reset_password_token
+    @url = "#{request.host}/api/v1/password/reset=#{token}"
     if @user.present?
       @user.generate_password_token! # generate pass token
-      token = @user.reset_password_token
-      @url = "#{request.host}/api/v1/password/reset=#{token}"
       UserMailer.reset_password(@user, @url).deliver_now
-      
       render json: { status: 'ok' }, status: :ok
     else
-      render json: { error: ['Email address not found. Please check and try again.'] }, status: :not_found
+      render json: { error: ['Email address not found.
+                    Please check and try again.'] }, status: :not_found
     end
   end
 
@@ -32,10 +31,11 @@ class Api::V1::PasswordsController < ApplicationController
         render json: { status: 'ok' }, status: :ok
       else
         render json: { error: user.errors.full_messages },
-                        status: :unprocessable_entity
+               status: :unprocessable_entity
       end
     else
-      render json: { error: ['Link not valid or expired. Try generating a new link.'] },
+      render json: { error: ['Link not valid or expired.
+                    Try generating a new link.'] },
              status: :not_found
     end
   end

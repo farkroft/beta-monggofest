@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
   include Knock::Authenticable
   rescue_from CanCan::AccessDenied do |exception|
-        redirect_to root_path, :alert => exception.message
-    end
+    redirect_to root_path, alert: exception.message
+  end
   before_action :skip_session
 
   def current_user

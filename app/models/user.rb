@@ -8,8 +8,11 @@ class User < ApplicationRecord
   # Necessary to authenticate.
 
   # Basic password validation, configure to your liking.
-  validates_length_of       :password, maximum: 72, minimum: 8, allow_nil: true, allow_blank: false
-  validates_confirmation_of :password, allow_nil: true, allow_blank: false
+  validates_length_of :password, maximum: 72,
+                                 minimum: 8, allow_nil: true,
+                                 allow_blank: false
+  validates_confirmation_of :password, allow_nil: true,
+                                       allow_blank: false
 
   before_validation do
     (self.email = email.to_s.downcase) && (self.name = name.to_s.downcase)
@@ -38,11 +41,11 @@ class User < ApplicationRecord
   end
 
   def admin?
-    self.role == 'admin'
+    role == 'admin'
   end
 
   def user?
-    self.role == 'user'
+    role == 'user'
   end
 
   private
