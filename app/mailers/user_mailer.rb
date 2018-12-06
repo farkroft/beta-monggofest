@@ -5,11 +5,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: 'Welcome to Monggovest App')
   end
-  
-  def reset_password(user,url)
-  	@user = user
-  	@url = url
-  	mail(to: @user.email, subject: "Token Password reset")
-  end
 
+  def reset_password(user, url)
+    @user = user
+    @url = url
+    mail(to: @user.email, subject: 'Token Password reset')
+  end
 end
