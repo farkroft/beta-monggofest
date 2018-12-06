@@ -48,7 +48,7 @@ class Api::V1::UsersController < ApplicationController
   # Method to delete a user, this method is only for admin accounts.
   def destroy
     user = User.find(params[:id])
-    if current_user.role == 'admin'
+    if user.role == 'admin'
       user.destroy
       render json: { status: 200, msg: 'User has been deleted.' }
     else

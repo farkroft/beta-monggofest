@@ -10,7 +10,10 @@ class Api::V1::PasswordsController < ApplicationController
 
     if @user.present?
       @user.generate_password_token! # generate pass token
-      UserMailer.reset_password(@user).deliver_now
+      token = @user.reset_password_token
+      @url = "#{request.host}/api/v1/password/reset=#{token}"
+      UserMailer.reset_password(@user, @url).deliver_now
+      
       render json: { status: 'ok' }, status: :ok
     else
       render json: { error: ['Email address not found. Please check and try again.'] }, status: :not_found
