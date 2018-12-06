@@ -1,5 +1,5 @@
 class Api::V1::HomeController < ApplicationController
-  before_action :authenticate_user, only: [:auth]
+  before_action :authenticate_user, only: %i[auth all]
 
   # Public methodz
   def index

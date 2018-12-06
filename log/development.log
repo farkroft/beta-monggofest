@@ -12737,3 +12737,59 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 200 OK in 404ms (Views: 334.5ms | ActiveRecord: 9.6ms)
 
 
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-06 15:26:03 +0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi96/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"fireint96@gmail.com", "password"=>{"email"=>"fireint96@gmail.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fireint96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "fireint96@gmail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "6c5b4ccb7be8fd07d94d"], ["reset_password_sent_at", "2018-12-06 08:26:04.347735"], ["updated_at", "2018-12-06 08:26:04.352434"], ["id", 8]]
+  ↳ app/models/user.rb:33
+  [1m[35m (100.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (12.7ms)
+UserMailer#reset_password: processed outbound mail in 441.3ms
+Sent mail to fireint96@gmail.com (2177.0ms)
+Date: Thu, 06 Dec 2018 15:26:05 +0700
+From: monggovest1@example.com
+To: fireint96@gmail.com
+Message-ID: <5c08dd1d616f8_49802ae4c1706ec857ed@RefiqiMF.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqiqiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqiqiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/api/v1/password/reset=bdc670d7e3516b4190e5
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 3458ms (Views: 162.2ms | ActiveRecord: 109.4ms)
+
+

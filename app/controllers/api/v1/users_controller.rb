@@ -32,10 +32,10 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # Method to update a specific user. User will need to be authorized.
+  # Method to update a specific user. User will need to be Logged-in.
   def update
     user = User.find(params[:id])
-    if user.update(user_params)
+    if user.present? && user.update(user_params)
       render json: {
         status: 'OK',
         msg: 'User details have been updated.',
