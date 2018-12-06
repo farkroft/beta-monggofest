@@ -28,7 +28,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'knock'
-gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'rubocop'
 # Use ActiveStorage variant
@@ -64,3 +63,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rails-controller-testing'
