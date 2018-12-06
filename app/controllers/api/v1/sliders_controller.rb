@@ -1,4 +1,5 @@
 class Api::V1::SlidersController < ApplicationController
+    # skip_before_action :verify_authenticity_token
     before_action :verify_authenticity_token, except: [:index]
     before_action :find_slider, only: %i[destroy show update]
 
@@ -20,6 +21,7 @@ class Api::V1::SlidersController < ApplicationController
   def create
     slider = Slider.new(slider_params)
     if slider.save
+      slider.reload
       render json: {
         status: 'OK', results: slider, error: nil
       }, status: :created
@@ -59,7 +61,7 @@ class Api::V1::SlidersController < ApplicationController
 
 # method to delete slider base on id
   def destroy
-    if @slider
+    if @slider = Slider.find(params[:id])
       @slider.destroy!
       render json: {
         status: 'OK', results: 'Delete success', error: nil

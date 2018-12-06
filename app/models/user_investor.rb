@@ -1,2 +1,3 @@
 class UserInvestor < ApplicationRecord
+    
 end

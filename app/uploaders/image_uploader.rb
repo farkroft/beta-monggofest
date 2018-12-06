@@ -45,4 +45,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def public_id
+    "sliders/" + Cloudinary::Utils.random_public_id
+  end
 end
