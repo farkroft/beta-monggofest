@@ -13,6 +13,9 @@ class User < ApplicationRecord
                                  allow_blank: false
   validates_confirmation_of :password, allow_nil: true,
                                        allow_blank: false
+  validates_length_of :name, minimum: 4,
+                             maximum: 32, allow_nil: true,
+                             allow_blank: false
 
   before_validation do
     (self.email = email.to_s.downcase) && (self.name = name.to_s.downcase)
