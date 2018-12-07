@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < ApplicationController
+  before_action :authenticate_user, only: [:update]
   # Should work if the current_user is authenticated.
   def index
     if current_user
@@ -35,7 +36,7 @@ class Api::V1::UsersController < ApplicationController
   # Method to update a specific user. User will need to be Logged-in.
   def update
     user = User.find(params[:id])
-    if user.present? && user.update(user_params)
+    if user.update(user_params)
       render json: {
         status: 'OK',
         msg: 'User details have been updated.',
