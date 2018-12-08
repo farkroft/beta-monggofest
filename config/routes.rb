@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :products
         resources :product_types
           resources :provinces
+            resources :regionals
     end
   end 
 end

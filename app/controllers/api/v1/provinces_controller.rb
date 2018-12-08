@@ -2,9 +2,11 @@ class Api::V1::ProvincesController < ApplicationController
     protect_from_forgery with: :null_session
  
     def index
-        @prov = Province.all
+        @prov = Province.first
+        @reg = Regional.first
+
         if @prov.present?
-             render json:  @prov, status: :ok     
+             render json:  @reg.province, status: :ok     
         else
              render json: {message_error: 'province null'}, status: :unprocessable_entity
         end

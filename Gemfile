@@ -63,3 +63,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_admin'
 gem 'rails_admin_import', '~> 2.1'
+gem 'carrierwave'
+gem 'cloudinary'
