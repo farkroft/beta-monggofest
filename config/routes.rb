@@ -1,12 +1,29 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace 'api' do
-    namespace 'v1' do
+  devise_for :users
+  mount RailsAdmin::Engine => '/api/v1/admin', as: 'rails_admin'
+
+  root to: 'pages#show', page: 'sign_in'
+
+  namespace :api do
+    namespace :v1 do
       resources :products
         resources :product_types
           resources :provinces
             resources :regionals
+      # User actions
+      post 'password/forgot', to: 'passwords#forgot'
+      post 'password/reset', to: 'passwords#reset'
+      get    '/users'          => 'users#index'
+      get    '/users/current'  => 'users#current'
+      post   '/users/create'   => 'users#create'
+      patch  '/user/:id'       => 'users#update'
+      delete '/user/:id'       => 'users#destroy'
+      get    'auth'            => 'home#auth'
+      get 'all'                => 'home#all'
+      # Get login token from Knock
+      post 'user_token' => 'user_token#create'
     end
-  end 
+  end
 end
