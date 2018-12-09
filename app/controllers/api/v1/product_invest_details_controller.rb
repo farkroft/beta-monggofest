@@ -4,8 +4,9 @@ class Api::V1::ProductInvestDetailsController < ApplicationController
 	
 	def show
 		if @proinvdetail.present?
+			data = @proinvdetail.as_json(include: [:product_invest , :product])
 			render json: {
-				status: 'OK', results:@proinvdetail.as_json(include: [:product_invest , :product]), 
+				status: 'OK', results: data, 
 				error: nil
 			}, status: :ok
 		else

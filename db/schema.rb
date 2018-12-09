@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
 
   create_table "products", force: :cascade do |t|
     t.bigint "kecamatan_id"
+    t.bigint "regional_id"
+    t.bigint "province_id"
     t.bigint "product_type_id"
     t.string "name"
     t.string "image"
@@ -60,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
     t.datetime "updated_at", null: false
     t.index ["kecamatan_id"], name: "index_products_on_kecamatan_id"
     t.index ["product_type_id"], name: "index_products_on_product_type_id"
+    t.index ["province_id"], name: "index_products_on_province_id"
+    t.index ["regional_id"], name: "index_products_on_regional_id"
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -94,5 +98,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
   add_foreign_key "product_invests", "products"
   add_foreign_key "products", "kecamatans"
   add_foreign_key "products", "product_types"
+  add_foreign_key "products", "provinces"
+  add_foreign_key "products", "regionals"
   add_foreign_key "regionals", "provinces"
 end
