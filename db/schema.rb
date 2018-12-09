@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_29_092850) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_04_115829) do
+>>>>>>> 4e2400fe37f146e142e0aeeaad6dc6a38f5c86af
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "kecamatans", force: :cascade do |t|
     t.bigint "regional_id"
     t.string "name"
@@ -101,4 +106,21 @@ ActiveRecord::Schema.define(version: 2018_11_29_092850) do
   add_foreign_key "products", "provinces"
   add_foreign_key "products", "regionals"
   add_foreign_key "regionals", "provinces"
+=======
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest"
+    t.string "role", default: "user", null: false
+    t.datetime "last_login"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.string "encrypted_password", default: "", null: false
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email"
+  end
+
+>>>>>>> 4e2400fe37f146e142e0aeeaad6dc6a38f5c86af
 end
