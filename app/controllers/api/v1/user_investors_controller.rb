@@ -5,12 +5,12 @@ class Api::V1::UserInvestorsController < ApplicationController
 
   def index
     @userin = UserInvestor.all
-    if userin.present?
+    if @userin.present?
       render json: {
         status: 'OK', results: @userin, errors: nil
       }, status: :ok
     else
-      render json: { status: 'FAILED', results: nil, errors: @userin.errors },
+      render json: { status: 'FAILED', results: nil, errors: 'there is no users to show' },
              status: :unprocesable_entity
     end
   end
@@ -18,9 +18,10 @@ class Api::V1::UserInvestorsController < ApplicationController
   def show
     @userin = UserInvestor.find(params[:id])
     if @userin.present?
-      render json: { status: 'OK', results: @userin, errors: nil }, status: :ok
+      data = @userin.as_json(include: [:product, :product_invest])
+      render json: { status: 'OK', results: data, errors: nil }, status: :ok
     else
-      render json: { status: 'FAILED', results: nil, errors: @userin.errors },
+      render json: { status: 'FAILED', results: nil, errors: 'user does not exist' },
              status: :not_found
     end
   end
@@ -33,7 +34,7 @@ class Api::V1::UserInvestorsController < ApplicationController
              status: :ok
     else
       render json: { status: 'FAILED', results: nil,
-                     errors: update_userin.errors },
+                     errors: 'update user failed' },
              status: :unprocesable_entity
     end
   end
@@ -44,7 +45,7 @@ class Api::V1::UserInvestorsController < ApplicationController
       render json: { status: 'OK', results: @userin, errors: nil },
              status: :created
     else
-      render json: { status: 'FAILED', results: nil, errors: @userin.errors },
+      render json: { status: 'FAILED', results: nil, errors: 'failed to create user' },
              status: :unprocesable_entity
     end
   end
@@ -56,7 +57,7 @@ class Api::V1::UserInvestorsController < ApplicationController
                      errors: nil }, status: :ok
     else
       render json: { status: 'FAILED', results: nil,
-                     errors: 'user has not been deleted' },
+                     errors: 'user failed to delete' },
              status: :unprocesable_entity
     end
   end
@@ -64,7 +65,7 @@ class Api::V1::UserInvestorsController < ApplicationController
   private
 
   def userin_params
-    params.permit(:user_id, :product_invest_id, :investor_slot,
+    params.permit(:user_id, :product_invests_id, :investor_slot,
                   :investor_pay, :invest_year)
   end
 end

@@ -31,6 +31,12 @@ Rails.application.routes.draw do
         get 'all'                => 'home#all'
         # Get login token from Knock
         post 'user_token' => 'user_token#create'
+        # routes for user investor
+        get 'userinvest', to: 'user_investors#index'
+        get 'userinvest/:id', to: 'user_investors#show'
+        post 'userinvest', to: 'user_investors#create'
+        put 'userinvest/:id', to: 'user_investors#update'
+        delete 'userinvest/:id', to: 'user_investors#destroy'
     end
   end
 end 

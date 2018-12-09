@@ -22076,3 +22076,201 @@ Processing by Api::V1::ProductInvestDetailsController#show as */*
 Completed 200 OK in 205ms (Views: 48.2ms | ActiveRecord: 36.0ms)
 
 
+Started GET "/api/v1/userinvestor/" for 127.0.0.1 at 2018-12-09 22:51:18 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/userinvestor"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/userinvestors/" for 127.0.0.1 at 2018-12-09 22:51:30 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/userinvestors"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/userinvestor" for 127.0.0.1 at 2018-12-09 22:51:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/userinvestor"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/userinvest" for 127.0.0.1 at 2018-12-09 22:54:48 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UserInvestorsController#index as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10"}
+  [1m[36mUserInvestor Load (1.5ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUserInvestor Load (0.3ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mUserInvestor Load (0.3ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `userin' for #<Api::V1::UserInvestorsController:0x000055b638349150>
+Did you mean?  @userin):
+  
+app/controllers/api/v1/user_investors_controller.rb:8:in `index'
+Started GET "/api/v1/userinvest" for 127.0.0.1 at 2018-12-09 22:55:13 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UserInvestorsController#index as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10"}
+  [1m[36mUserInvestor Load (0.7ms)[0m  [1m[34mSELECT "user_investors".* FROM "user_investors"[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 500 Internal Server Error in 21ms (Views: 8.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/v1/userinvest" for 127.0.0.1 at 2018-12-09 22:55:23 +0700
+Processing by Api::V1::UserInvestorsController#create as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :product_invests_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+  [1m[36mUserInvestor Create (6.2ms)[0m  [1m[32mINSERT INTO "user_investors" ("user_id", "investor_slot", "investor_pay", "invest_year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["investor_slot", 15], ["investor_pay", 150000000.0], ["invest_year", 10], ["created_at", "2018-12-09 15:55:23.242345"], ["updated_at", "2018-12-09 15:55:23.242345"]]
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+  [1m[35m (35.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 201 Created in 67ms (Views: 1.2ms | ActiveRecord: 51.8ms)
+
+
+Started DELETE "/api/v1/userinvest/4" for 127.0.0.1 at 2018-12-09 22:55:49 +0700
+Processing by Api::V1::UserInvestorsController#destroy as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10", "id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mUserInvestor Load (0.3ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" WHERE "user_investors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_investors_controller.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:55
+  [1m[36mUserInvestor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_investors" WHERE "user_investors"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/user_investors_controller.rb:55
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:55
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 53ms (Views: 18.6ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/api/v1/userinvest/4" for 127.0.0.1 at 2018-12-09 22:58:08 +0700
+Processing by Api::V1::UserInvestorsController#show as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10", "id"=>"4"}
+  [1m[36mUserInvestor Load (0.3ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" WHERE "user_investors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_investors_controller.rb:19
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find UserInvestor with 'id'=4):
+  
+app/controllers/api/v1/user_investors_controller.rb:19:in `show'
+  [1m[36mUserInvestor Load (0.4ms)[0m  [1m[34mSELECT  "user_investors".* FROM "user_investors" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/userinvest/" for 127.0.0.1 at 2018-12-09 22:59:08 +0700
+Processing by Api::V1::UserInvestorsController#index as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10"}
+  [1m[36mUserInvestor Load (0.4ms)[0m  [1m[34mSELECT "user_investors".* FROM "user_investors"[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/userinvest/" for 127.0.0.1 at 2018-12-09 22:59:23 +0700
+Processing by Api::V1::UserInvestorsController#create as */*
+  Parameters: {"user_id"=>"1", "product_invests_id"=>"1", "investor_slot"=>"15", "investor_pay"=>"150000000", "invest_year"=>"10"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+  [1m[36mUserInvestor Create (4.2ms)[0m  [1m[32mINSERT INTO "user_investors" ("user_id", "product_invests_id", "investor_slot", "investor_pay", "invest_year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["product_invests_id", 1], ["investor_slot", 15], ["investor_pay", 150000000.0], ["invest_year", 10], ["created_at", "2018-12-09 15:59:23.179178"], ["updated_at", "2018-12-09 15:59:23.179178"]]
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_investors_controller.rb:44
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.6ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  insert or update on table "user_investors" violates foreign key constraint "fk_rails_35dabd55ac"
+DETAIL:  Key (product_invests_id)=(1) is not present in table "product_invests".
+: INSERT INTO "user_investors" ("user_id", "product_invests_id", "investor_slot", "investor_pay", "invest_year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"):
+  
+app/controllers/api/v1/user_investors_controller.rb:44:in `create'
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
