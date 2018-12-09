@@ -48,6 +48,8 @@ class Api::V1::SlidersController < ApplicationController
 # method to update slider that have exist
   def update
     @slider = Slider.find(params[:id])
+    @slider.image_url
+    @slider.remove_image!
     update_slider = @slider.update(slider_params)
     if update_slider
       render json: {

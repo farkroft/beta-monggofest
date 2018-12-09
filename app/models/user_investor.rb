@@ -1,2 +1,0 @@
-class UserInvestor < ApplicationRecord
-end

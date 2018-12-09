@@ -25,18 +25,6 @@ ActiveRecord::Schema.define(version: 2018_12_05_162408) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_investors", force: :cascade do |t|
-    t.bigint "user_investors_id"
-    t.bigint "user_id"
-    t.integer "investor_slot"
-    t.float "investor_pay"
-    t.integer "invest_year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_investors_on_user_id"
-    t.index ["user_investors_id"], name: "index_user_investors_on_user_investors_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false

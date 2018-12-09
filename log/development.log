@@ -2569,3 +2569,292 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (229.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_development"[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (223.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_test"[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (3714.9ms)[0m  [1m[35mCREATE DATABASE "MonggoFest_development" ENCODING = 'unicode'[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (3752.9ms)[0m  [1m[35mCREATE DATABASE "MonggoFest_test" ENCODING = 'unicode'[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (70.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (68.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateUsers (20181122112548)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying, "role" character varying DEFAULT 'user' NOT NULL, "last_login" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181122112548_create_users.rb:5
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20181122112548_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181122112548"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to AddPasswordResetColumnsToUser (20181125023908)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20181125023908_add_password_reset_columns_to_user.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20181125023908_add_password_reset_columns_to_user.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181125023908"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Migrating to CreateSliders (20181205162408)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (54.5ms)[0m  [1m[35mCREATE TABLE "sliders" ("id" bigserial primary key, "name" character varying, "image" character varying, "url" character varying, "sort_number" integer, "isActive" boolean DEFAULT TRUE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205162408_create_sliders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205162408"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-09 09:58:54.717368"], ["updated_at", "2018-12-09 09:58:54.717368"]]
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/bin/rake:23
+Started GET "/api/v1/sliders" for 127.0.0.1 at 2018-12-09 17:00:28 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::SlidersController#index as */*
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT "sliders".* FROM "sliders"[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 28ms (Views: 6.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/v1/sliders" for 127.0.0.1 at 2018-12-09 17:00:57 +0700
+Processing by Api::V1::SlidersController#create as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f741469cd98 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-192wq4n.jpeg>, @original_filename="liburan.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"liburan.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Create (0.7ms)[0m  [1m[32mINSERT INTO "sliders" ("name", "image", "url", "sort_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "muiin"], ["image", "sliders/hcgoi86gaizdnpyxmdgv.jpeg"], ["url", "monggovest/sliders"], ["sort_number", 1], ["created_at", "2018-12-09 10:00:57.128101"], ["updated_at", "2018-12-09 10:00:57.128101"]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Update All (0.9ms)[0m  [1m[33mUPDATE "sliders" SET "image" = 'image/upload/v1544349660/sliders/hcgoi86gaizdnpyxmdgv.jpg' WHERE "sliders"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[35m (226.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Load (0.7ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:24
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.28ms)
+Completed 201 Created in 4382ms (Views: 2.2ms | ActiveRecord: 234.0ms)
+
+
+Started PUT "/api/v1/sliders" for 127.0.0.1 at 2018-12-09 17:01:18 +0700
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/sliders"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/sliders" for 127.0.0.1 at 2018-12-09 17:01:47 +0700
+Processing by Api::V1::SlidersController#index as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000559573e22530 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-1mlkpnu.jpeg>, @original_filename="baca buku.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"baca buku.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1"}
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT "sliders".* FROM "sliders"[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.63ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/api/v1/sliders/1" for 127.0.0.1 at 2018-12-09 17:02:04 +0700
+Processing by Api::V1::SlidersController#update as */*
+  Parameters: {"name"=>"muiin", "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:80
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:50
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/api/v1/sliders/1" for 127.0.0.1 at 2018-12-09 17:03:22 +0700
+Processing by Api::V1::SlidersController#update as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7400472ab8 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-126zyvp.jpeg>, @original_filename="baca buku.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"baca buku.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:80
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:50
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+  [1m[36mSlider Update (0.6ms)[0m  [1m[33mUPDATE "sliders" SET "image" = $1, "updated_at" = $2 WHERE "sliders"."id" = $3[0m  [["image", "sliders/copzcmjzp5j1x0qg6jvg.jpeg"], ["updated_at", "2018-12-09 10:03:22.136038"], ["id", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+  [1m[36mSlider Update All (0.8ms)[0m  [1m[33mUPDATE "sliders" SET "image" = 'image/upload/v1544349805/sliders/copzcmjzp5j1x0qg6jvg.jpg' WHERE "sliders"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+  [1m[35m (226.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 4046ms (Views: 0.8ms | ActiveRecord: 228.2ms)
+
+
+Started DELETE "/api/v1/sliders/1" for 127.0.0.1 at 2018-12-09 17:04:35 +0700
+Processing by Api::V1::SlidersController#destroy as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7414ec5178 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-1m4wdy1.jpeg>, @original_filename="baca buku.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"baca buku.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.3ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:82
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+  [1m[36mSlider Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sliders" WHERE "sliders"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 2225ms (Views: 13.5ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/api/v1/sliders/" for 127.0.0.1 at 2018-12-09 17:05:14 +0700
+Processing by Api::V1::SlidersController#index as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f740c644d58 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-fhev73.jpeg>, @original_filename="baca buku.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"baca buku.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1"}
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT "sliders".* FROM "sliders"[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/sliders/" for 127.0.0.1 at 2018-12-09 17:05:22 +0700
+Processing by Api::V1::SlidersController#create as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7400692848 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-c6ussa.jpeg>, @original_filename="baca buku.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"baca buku.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Create (0.5ms)[0m  [1m[32mINSERT INTO "sliders" ("name", "image", "url", "sort_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "muiin"], ["image", "sliders/gbi0flao91wxcn7ty6ox.jpeg"], ["url", "monggovest/sliders"], ["sort_number", 1], ["created_at", "2018-12-09 10:05:22.095227"], ["updated_at", "2018-12-09 10:05:22.095227"]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Update All (0.7ms)[0m  [1m[33mUPDATE "sliders" SET "image" = 'image/upload/v1544349925/sliders/gbi0flao91wxcn7ty6ox.jpg' WHERE "sliders"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:23
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:24
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.64ms)
+Completed 201 Created in 3477ms (Views: 1.2ms | ActiveRecord: 14.7ms)
+
+
+Started PUT "/api/v1/sliders/2" for 127.0.0.1 at 2018-12-09 17:05:42 +0700
+Processing by Api::V1::SlidersController#update as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7410027c78 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-12526-6hb439.jpeg>, @original_filename="mawar biru.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"mawar biru.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.3ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:82
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:50
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `avatar_url' for #<Slider:0x00007f7410038438>):
+  
+app/controllers/api/v1/sliders_controller.rb:51:in `update'
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" ORDER BY "sliders"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/sliders/2" for 127.0.0.1 at 2018-12-09 17:08:25 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fajar/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::SlidersController#show as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x000055993ce33a20 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-13091-u1z5d5.jpeg>, @original_filename="mawar biru.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"mawar biru.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"2"}
+  [1m[36mSlider Load (0.3ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:82
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.17ms)
+Completed 200 OK in 40ms (Views: 8.6ms | ActiveRecord: 3.6ms)
+
+
+Started PUT "/api/v1/sliders/2" for 127.0.0.1 at 2018-12-09 17:08:31 +0700
+Processing by Api::V1::SlidersController#update as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fada003c550 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-13091-12nl32j.jpeg>, @original_filename="mawar biru.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"mawar biru.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:82
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:50
+Unpermitted parameter: :id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:53
+  [1m[36mSlider Update (0.4ms)[0m  [1m[33mUPDATE "sliders" SET "image" = $1, "updated_at" = $2 WHERE "sliders"."id" = $3[0m  [["image", "sliders/udj5evbzrat0v231c6rb.jpeg"], ["updated_at", "2018-12-09 10:08:33.385325"], ["id", 2]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:53
+  [1m[36mSlider Update All (0.5ms)[0m  [1m[33mUPDATE "sliders" SET "image" = 'image/upload/v1544350115/sliders/udj5evbzrat0v231c6rb.jpg' WHERE "sliders"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:53
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:53
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 4202ms (Views: 1.1ms | ActiveRecord: 14.9ms)
+
+
+Started DELETE "/api/v1/sliders/2" for 127.0.0.1 at 2018-12-09 17:10:16 +0700
+Processing by Api::V1::SlidersController#destroy as */*
+  Parameters: {"name"=>"muiin", "image"=>#<ActionDispatch::Http::UploadedFile:0x000055993df64e48 @tempfile=#<Tempfile:/tmp/RackMultipart20181209-13091-4ihbq6.jpeg>, @original_filename="mawar biru.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"mawar biru.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "url"=>"monggovest/sliders", "sort_number"=>"1", "id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:82
+  [1m[36mCACHE Slider Load (0.0ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" WHERE "sliders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:67
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+  [1m[36mSlider Destroy (0.5ms)[0m  [1m[31mDELETE FROM "sliders" WHERE "sliders"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/sliders_controller.rb:68
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 2277ms (Views: 1.1ms | ActiveRecord: 15.9ms)
+
+
