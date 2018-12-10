@@ -14839,3 +14839,280 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:36:18 +0700
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"d92e7d6fab21a513352a", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 53ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:36:26 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"email"=>"refiqi@example.com", "token"=>"d92e7d6fab21a513352a", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 LIMIT $2[0m  [["reset_password_token", "d92e7d6fab21a513352a"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_sent_at" = $1, "reset_password_token" = $2, "encrypted_password" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["reset_password_sent_at", nil], ["reset_password_token", nil], ["encrypted_password", "$2a$11$rmXxFMnVydF5UaTVizsTRuzBdXvSJSnNCNl84T9ay6yiYKUwdqWn."], ["updated_at", "2018-12-10 03:36:27.118041"], ["id", 2]]
+  ↳ app/models/user.rb:44
+  [1m[35m (92.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 356ms (Views: 1.2ms | ActiveRecord: 100.6ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:19 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"d92e7d6fab21a513352a", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-10 10:37:23 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "429b6d1ebf41172296f5"], ["reset_password_sent_at", "2018-12-10 03:37:23.041801"], ["updated_at", "2018-12-10 03:37:23.044485"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (1.5ms)
+UserMailer#reset_password: processed outbound mail in 183.6ms
+Sent mail to refiqi@example.com (1328.8ms)
+Date: Mon, 10 Dec 2018 10:37:23 +0700
+From: monggovest1@example.com
+To: refiqi@example.com
+Message-ID: <5c0ddf737d3c4_2caa2b20506902bc29548@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1805ms (Views: 5.1ms | ActiveRecord: 22.7ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:52 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:53 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:54 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:55 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:56 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:56 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:37:57 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/user_token" for 127.0.0.1 at 2018-12-10 10:38:23 +0700
+Processing by Api::V1::UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 151ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/user_token" for 127.0.0.1 at 2018-12-10 10:39:03 +0700
+Processing by Api::V1::UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.08ms)
+Completed 201 Created in 156ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:39:30 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:39:36 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:39:53 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:40:18 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"email"=>"refiqi@example.com", "token"=>"429b6d1ebf41172296f5", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 LIMIT $2[0m  [["reset_password_token", "429b6d1ebf41172296f5"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "reset_password_sent_at" = $1, "reset_password_token" = $2, "encrypted_password" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["reset_password_sent_at", nil], ["reset_password_token", nil], ["encrypted_password", "$2a$11$F7Y8bXz6EkSfuHz3VeQWAuUNGR8Ed1.XlVPlSQCYjKI.Sxm7HfZQ6"], ["updated_at", "2018-12-10 03:40:19.037593"], ["id", 2]]
+  ↳ app/models/user.rb:44
+  [1m[35m (19.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 160ms (Views: 1.2ms | ActiveRecord: 21.5ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-10 10:41:05 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "c96b34a7f0e229e4eada"], ["reset_password_sent_at", "2018-12-10 03:41:06.047984"], ["updated_at", "2018-12-10 03:41:06.050308"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (46.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.4ms)
+UserMailer#reset_password: processed outbound mail in 7.9ms
+Sent mail to refiqi@example.com (1195.6ms)
+Date: Mon, 10 Dec 2018 10:41:06 +0700
+From: monggovest1@example.com
+To: refiqi@example.com
+Message-ID: <5c0de0521c6ae_2caa2b20506902bc296b4@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 1298ms (Views: 15.3ms | ActiveRecord: 52.5ms)
+
+
+Started POST "/api/v1/password/reset" for 127.0.0.1 at 2018-12-10 10:41:43 +0700
+Processing by Api::V1::PasswordsController#reset as */*
+  Parameters: {"token"=>"c96b34a7f0e229e4eada", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."reset_password_token" = $1 LIMIT $2[0m  [["reset_password_token", "c96b34a7f0e229e4eada"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:44
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "reset_password_sent_at" = $1, "reset_password_token" = $2, "encrypted_password" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["reset_password_sent_at", nil], ["reset_password_token", nil], ["encrypted_password", "$2a$11$udO.IaGNslDKsrfoiBUIDuYPxw9vEZhwTlhvbYLOipM4oENErkGD2"], ["updated_at", "2018-12-10 03:41:43.359198"], ["id", 2]]
+  ↳ app/models/user.rb:44
+  [1m[35m (336.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:44
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 492ms (Views: 21.9ms | ActiveRecord: 337.3ms)
+
+
