@@ -21,9 +21,6 @@ class Api::V1::PasswordsController < ApplicationController
 
   def reset
     token = params[:token].to_s
-
-    return render json: { error: 'Token not present' } if params[:email].blank?
-
     user = User.find_by(reset_password_token: token)
 
     if user.present? && user.password_token_valid?
