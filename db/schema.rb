@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_035742) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+<<<<<<< HEAD
   add_foreign_key "kecamatans", "regionals"
   add_foreign_key "product_invest_details", "product_invests"
   add_foreign_key "product_invests", "products"
@@ -110,4 +111,6 @@ ActiveRecord::Schema.define(version: 2018_12_10_035742) do
   add_foreign_key "regionals", "provinces"
   add_foreign_key "user_investors", "product_invests", column: "product_invests_id"
   add_foreign_key "user_investors", "users"
+=======
+>>>>>>> 21bf73560634017023796157fe3645090dc75c2e
 end
