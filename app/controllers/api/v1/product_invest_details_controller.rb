@@ -1,5 +1,4 @@
 class Api::V1::ProductInvestDetailsController < ApplicationController
- 
   before_action :find_proinvdetail, only: [:show]
 
   def show

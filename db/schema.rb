@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_181_204_115_829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
@@ -85,32 +84,32 @@ ActiveRecord::Schema.define(version: 20_181_204_115_829) do
     t.string 'encrypted_password', default: '', null: false
     t.datetime 'remember_created_at'
     t.index ['email'], name: 'index_users_on_email'
-=======
-ActiveRecord::Schema.define(version: 2018_12_10_035742) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+    ActiveRecord::Schema.define(version: 20_181_210_035_742) do
+      # These are extensions that must be enabled in order to support this database
+      enable_extension 'plpgsql'
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "role", default: "user", null: false
-    t.datetime "last_login"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.string "encrypted_password", default: "", null: false
-    t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email"
->>>>>>> d38e8d4e9e7ff1e8b1141503e28441ec7fe08b9b
+      create_table 'users', force: :cascade do |t|
+        t.string 'name', null: false
+        t.string 'email', null: false
+        t.string 'role', default: 'user', null: false
+        t.datetime 'last_login'
+        t.datetime 'created_at', null: false
+        t.datetime 'updated_at', null: false
+        t.string 'reset_password_token'
+        t.datetime 'reset_password_sent_at'
+        t.string 'encrypted_password', default: '', null: false
+        t.datetime 'remember_created_at'
+        t.index ['email'], name: 'index_users_on_email'
+      end
+
+      add_foreign_key 'kecamatans', 'regionals'
+      add_foreign_key 'product_invest_details', 'product_invests'
+      add_foreign_key 'product_invests', 'products'
+      add_foreign_key 'products', 'kecamatans'
+      add_foreign_key 'products', 'provinces'
+      add_foreign_key 'products', 'regionals'
+      add_foreign_key 'regionals', 'provinces'
+    end
   end
-
-  add_foreign_key 'kecamatans', 'regionals'
-  add_foreign_key 'product_invest_details', 'product_invests'
-  add_foreign_key 'product_invests', 'products'
-  add_foreign_key 'products', 'kecamatans'
-  add_foreign_key 'products', 'provinces'
-  add_foreign_key 'products', 'regionals'
-  add_foreign_key 'regionals', 'provinces'
 end
