@@ -10,7 +10,8 @@ class Api::V1::UserInvestorsController < ApplicationController
         status: 'OK', results: @userin, errors: nil
       }, status: :ok
     else
-      render json: { status: 'FAILED', results: nil, errors: 'there is no users to show' },
+      render json: { status: 'FAILED', results: nil,
+                     errors: 'there is no users to show' },
              status: :unprocesable_entity
     end
   end
@@ -18,10 +19,11 @@ class Api::V1::UserInvestorsController < ApplicationController
   def show
     @userin = UserInvestor.find(params[:id])
     if @userin.present?
-      data = @userin.as_json(include: [:product, :product_invest])
+      data = @userin.as_json(include: %i[product product_invest])
       render json: { status: 'OK', results: data, errors: nil }, status: :ok
     else
-      render json: { status: 'FAILED', results: nil, errors: 'user does not exist' },
+      render json: { status: 'FAILED', results: nil,
+                     errors: 'user does not exist' },
              status: :not_found
     end
   end
@@ -45,7 +47,8 @@ class Api::V1::UserInvestorsController < ApplicationController
       render json: { status: 'OK', results: @userin, errors: nil },
              status: :created
     else
-      render json: { status: 'FAILED', results: nil, errors: 'failed to create user' },
+      render json: { status: 'FAILED', results: nil,
+                     errors: 'failed to create user' },
              status: :unprocesable_entity
     end
   end
