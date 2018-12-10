@@ -1,9 +1,9 @@
 class Api::V1::SlidersController < ApplicationController
-    # skip_before_action :verify_authenticity_token
-    before_action :verify_authenticity_token, except: [:index]
-    before_action :find_slider, only: %i[destroy show update]
+  # skip_before_action :verify_authenticity_token
+  before_action :verify_authenticity_token, except: [:index]
+  before_action :find_slider, only: %i[destroy show update]
 
-# method to create API to show all slider from table
+  # method to create API to show all slider from table
   def index
     sliders = Slider.all
     if sliders.present?
@@ -17,14 +17,13 @@ class Api::V1::SlidersController < ApplicationController
     end
   end
 
-# method to save new slider
+  # method to save new slider
   def create
     slider = Slider.new(slider_params)
     if slider.save
       slider.reload
-      render json: {
-        status: 'OK', results: slider, error: nil
-      }, status: :created
+      render json: { status: 'OK', results: slider, error: nil },
+             status: :created
     else
       render json: {
         status: 'FAIL', results: nil, error: 'data fail created'
@@ -32,7 +31,7 @@ class Api::V1::SlidersController < ApplicationController
     end
   end
 
-# method to show specific slider
+  # method to show specific slider
   def show
     if @slider.present?
       render json: {
@@ -45,27 +44,25 @@ class Api::V1::SlidersController < ApplicationController
     end
   end
 
-# method to update slider that have exist
+  # method to update slider that have exist
   def update
     @slider = Slider.find(params[:id])
     @slider.image_url
     @slider.remove_image!
     update_slider = @slider.update(slider_params)
     if update_slider
-      render json: {
-        status: 'OK', results: update_slider, error: nil
-      }, status: :ok
+      render json: { status: 'OK', results: update_slider, error: nil },
+             status: :ok
     else
-      render json: {
-        status: 'FAIL', results: nil, error: 'Data fail to update'
-      }, status: :unprocessable_entity
+      render json: { status: 'FAIL', results: nil, error: 'Data fail to update' },
+             status: :unprocessable_entity
     end
   end
 
-# method to delete slider base on id
+  # method to delete slider base on id
   def destroy
-    if @slider = Slider.find(params[:id])
-      @slider.destroy!
+    @slider = Slider.find(params[:id])
+    if @slider.destroy!
       render json: {
         status: 'OK', results: 'Delete success', error: nil
       }, status: :ok
@@ -83,9 +80,8 @@ class Api::V1::SlidersController < ApplicationController
   end
 
   def slider_params
-    # params.require(:slider).permit(:name, :image, :url, :sort_number, :isActive)
+    # params.require(:slider).permit(:name,
+    # :image, :url, :sort_number, :isActive)
     params.permit(:name, :image, :url, :sort_number, :isActive)
   end
 end
-
-
