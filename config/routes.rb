@@ -1,16 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-=======
   devise_for :users
   mount RailsAdmin::Engine => '/api/v1/admin', as: 'rails_admin'
 
   root to: 'pages#show', page: 'sign_in'
 
->>>>>>> 4e2400fe37f146e142e0aeeaad6dc6a38f5c86af
   namespace :api do
   	namespace :v1 do
         get    'popularproducts',     to: 'popular_products#index'
