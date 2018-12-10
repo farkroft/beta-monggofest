@@ -4,7 +4,6 @@ class CreateProductInvests < ActiveRecord::Migration[5.2]
       t.references :product, foreign_key: true
       t.float :price
       t.integer :slot
-      t.integer :count_view, default: 0
 
       t.timestamps
     end

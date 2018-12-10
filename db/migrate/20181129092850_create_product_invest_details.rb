@@ -7,6 +7,7 @@ class CreateProductInvestDetails < ActiveRecord::Migration[5.2]
       t.integer :return_value
       t.integer :share_periode
       t.text :background
+      t.integer :count_view, default: 0
 
       t.timestamps
     end

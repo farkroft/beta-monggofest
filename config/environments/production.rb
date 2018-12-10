@@ -60,8 +60,8 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-   config.action_mailer.delivery_method = :smtp
-   config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
     address: 'smtp.mailgun.org',
     port: 587,
     domain: ENV['DOMAIN'],
