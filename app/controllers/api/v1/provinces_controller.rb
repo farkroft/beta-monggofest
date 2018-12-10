@@ -1,25 +1,32 @@
 class Api::V1::ProvincesController < ApplicationController
     protect_from_forgery with: :null_session
+    protect_from_forgery with: :null_session
  
-    def index
-        @prov = Province.first
-        @reg = Regional.first
-
-        if @prov.present?
-             render json:  @reg.province, status: :ok     
-        else
-             render json: {message_error: 'province null'}, status: :unprocessable_entity
-        end
+    ef index
+    provinces = Province.all
+    if provinces.present?
+      render json: {
+        status: 'OK', results: provinces, error: nil
+      }, status: :ok
+    else
+      render json: {
+        status: 'FAIL', results: nil, error: 'Data is empty'
+      }, status: :unprocessable_entity
     end
     def show
-        @prov = Province.find(params[:id])
-       # @prov = Province.all
-        if @prov.present?
-            render json: @prov, status: :ok
-        else
-            render json: {message_error: 'province null'}, status: :unprocessable_entity
-        end
+    @prov = Province.find(params[:id])
+    
+    if @prov.present?
+        render json: {
+            status: 'OK', results: @prov,
+            }, status: :ok
+    else
+        render json: {
+            status: 'FAIL', results: nil, error: 'Data is empty'
+            }, status: :unprocessable_entity
     end
+end
+
 
     
     / def create

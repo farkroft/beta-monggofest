@@ -15,55 +15,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_115829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
   create_table "kecamatans", force: :cascade do |t|
     t.bigint "regional_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
-  end
-
-  create_table "product_invest_details", force: :cascade do |t|
-    t.bigint "product_invest_id"
-    t.text "description"
-    t.integer "period"
-    t.integer "return_value"
-    t.integer "share_periode"
-    t.text "background"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_invest_id"], name: "index_product_invest_details_on_product_invest_id"
-  end
-
-  create_table "product_invests", force: :cascade do |t|
-    t.bigint "product_id"
-    t.float "price"
-    t.integer "slot"
-    t.integer "count_view"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_invests_on_product_id"
   end
 
   create_table "product_types", force: :cascade do |t|
@@ -77,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_115829) do
     t.bigint "product_type_id"
     t.string "name"
     t.string "image"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kecamatan_id"], name: "index_products_on_kecamatan_id"
@@ -113,8 +71,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_115829) do
   end
 
   add_foreign_key "kecamatans", "regionals"
-  add_foreign_key "product_invest_details", "product_invests"
-  add_foreign_key "product_invests", "products"
   add_foreign_key "products", "kecamatans"
   add_foreign_key "products", "product_types"
   add_foreign_key "regionals", "provinces"
