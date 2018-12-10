@@ -15116,3 +15116,46 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 492ms (Views: 21.9ms | ActiveRecord: 337.3ms)
 
 
+Started POST "/api/v1/users/create" for 127.0.0.1 at 2018-12-10 10:56:52 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"refi@example.com", "password"=>"[FILTERED]", "name"=>"refiqi", "role"=>"admin"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "created_at", "updated_at", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "refiqi"], ["email", "refi@example.com"], ["role", "admin"], ["created_at", "2018-12-10 03:56:53.009467"], ["updated_at", "2018-12-10 03:56:53.009467"], ["encrypted_password", "$2a$11$Rbq.DrhPxSFJTJqMtpuvuOdT36ePzLN0bYFSEHOFePNrzWl9KbQNy"]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[35m (160.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 201 Created in 439ms (Views: 16.7ms | ActiveRecord: 168.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to RemovePasswordDigestColumns (20181210035742)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (48.2ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "password_digest"[0m
+  ↳ db/migrate/20181210035742_remove_password_digest_columns.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181210035742"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (39.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
