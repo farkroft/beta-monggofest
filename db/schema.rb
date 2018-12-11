@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_10_064716) do
-=======
-ActiveRecord::Schema.define(version: 2018_12_05_090816) do
->>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "kecamatans", force: :cascade do |t|
     t.bigint "regional_id"
     t.string "name"
@@ -128,34 +123,4 @@ ActiveRecord::Schema.define(version: 2018_12_05_090816) do
   add_foreign_key "regionals", "provinces"
   add_foreign_key "user_investors", "product_invests", column: "product_invests_id"
   add_foreign_key "user_investors", "users"
-=======
-  create_table "payment_details", force: :cascade do |t|
-    t.integer "user_investor_id"
-    t.string "card_number"
-    t.date "card_valid_date"
-    t.string "cvv"
-    t.boolean "isPaid", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "payment_method"
-    t.string "integer"
-  end
-
-  create_table "payment_methods", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_investors", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "product_invest_id"
-    t.integer "investor_slot"
-    t.integer "invest_year"
-    t.float "investor_pay"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
 end
