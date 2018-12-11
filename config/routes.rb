@@ -1,6 +1,7 @@
  #frozen_string_literal: true
 
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -71,3 +72,16 @@ Rails.application.routes.draw do
     end
   end
 end 
+=======
+  namespace :api do
+    namespace :v1 do
+ 
+        get 'payment_details', to: 'payment_details#index'
+        get 'payment_details', to: 'payment_details#show'
+        post 'payment_details', to: 'payment_details#create'
+        delete 'payment_detail/:id', to: 'payment_details#destroy'
+        patch 'payment_detail/:id', to: 'payment_details#update'
+      end
+    end
+  end
+>>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
