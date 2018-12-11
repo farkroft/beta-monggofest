@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
   ↳ /home/ndp/.rvm/gems/ruby-2.5.3/bin/rake:23
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -11735,7 +11735,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/api/v1/prodinvests" for 127.0.0.1 at 2018-12-02 15:12:12 +0700
 Processing by Api::V1::ProductInvestsController#index as */*
   Parameters: {"product_invest"=>{}}
@@ -11936,7 +11936,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/api/v1/prodinvests" for 127.0.0.1 at 2018-12-02 15:20:11 +0700
 Processing by Api::V1::ProductInvestsController#index as */*
   Parameters: {"product_invest"=>{}}
@@ -13250,7 +13250,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/api/v1/proinvdetail/1" for 127.0.0.1 at 2018-12-02 20:07:32 +0700
 Processing by Api::V1::ProductInvestDetailsController#show as */*
   Parameters: {"id"=>"1", "product_invest_detail"=>{}}
@@ -13407,7 +13407,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/api/v1/proinvdetail/1" for 127.0.0.1 at 2018-12-02 20:08:47 +0700
 Processing by Api::V1::ProductInvestDetailsController#show as */*
   Parameters: {"id"=>"1", "product_invest_detail"=>{}}
@@ -22211,7 +22211,7 @@ Processing by Api::V1::ProductInvestsController#index as */*
 Completed 200 OK in 187ms (Views: 3.7ms | ActiveRecord: 49.2ms)
 
 
-<<<<<<< HEAD
+
   [1m[35m (15.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
   ↳ /home/refiqi96/.rvm/gems/ruby-2.5.3/bin/rake:23
   [1m[35m (12.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -31324,7 +31324,7 @@ ActionController::RoutingError (No route matches [GET] "/users"):
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 =======
-<<<<<<< HEAD
+
 Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-06 05:19:18 +0700
   [1m[35m (33.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/refiqi96/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
@@ -31371,7 +31371,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-05 16:45:42 +0700
 Processing by Devise::SessionsController#new as HTML
   Rendering devise/sessions/new.html.erb within layouts/application
@@ -32511,7 +32511,7 @@ Content-Type: text/html;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
-<<<<<<< HEAD
+
 <p>Hello refiqi@example.com!</p>
 
 <p>Someone has requested a link to change your password. You can do this through the link below.</p>
@@ -32748,7 +32748,7 @@ Processing by Api::V1::UsersController#create as */*
 Can't verify CSRF token authenticity.
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   ↳ app/controllers/api/v1/users_controller.rb:27
-<<<<<<< HEAD
+
   [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fireint96@gmail.com"], ["LIMIT", 1]]
   ↳ app/controllers/api/v1/users_controller.rb:27
   [1m[36mCACHE User Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fireint96@gmail.com"], ["LIMIT", 1]]
@@ -32832,7 +32832,7 @@ Content-Type: text/html;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
-<<<<<<< HEAD
+
 <p>Hello fireint96@gmail.com!</p>
 
 <p>Someone has requested a link to change your password. You can do this through the link below.</p>
@@ -34000,7 +34000,7 @@ Can't verify CSRF token authenticity.
 Completed 202 Accepted in 945ms (Views: 0.9ms | ActiveRecord: 933.0ms)
 
 
-<<<<<<< HEAD
+
 Started GET "/api/v1/prodinvests" for 127.0.0.1 at 2018-12-09 14:43:16 +0700
   [1m[35m (42.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/rauf/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
@@ -34657,7 +34657,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
   ↳ bin/rails:13
   [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -34785,7 +34785,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
-<<<<<<< HEAD
+
 Started GET "/api/v1/prodinvest/1" for 127.0.0.1 at 2018-12-09 16:30:53 +0700
 Processing by Api::V1::ProductInvestsController#show as */*
   Parameters: {"id"=>"1"}
