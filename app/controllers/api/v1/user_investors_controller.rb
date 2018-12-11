@@ -1,4 +1,6 @@
 class Api::V1::UserInvestorsController < ApplicationController
+  
+
   def new
     @userin = UserInvestor.new
   end
@@ -19,7 +21,7 @@ class Api::V1::UserInvestorsController < ApplicationController
   def show
     @userin = UserInvestor.find(params[:id])
     if @userin.present?
-      data = @userin.as_json(include: [:product, :product_invest])
+      data = @userin.as_json(include: %i[product product_invest])
       render json: { status: 'OK', results: data, errors: nil }, status: :ok
     else
       render json: { status: 'FAILED', results: nil,
