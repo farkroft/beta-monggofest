@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_035742) do
+ActiveRecord::Schema.define(version: 2018_12_10_064716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 2018_12_10_035742) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
+  end
+
+  create_table "payment_details", force: :cascade do |t|
+    t.bigint "user_investor_id"
+    t.integer "payment_method"
+    t.string "card_number"
+    t.date "card_valid_date"
+    t.string "cvv"
+    t.boolean "isPaid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_investor_id"], name: "index_payment_details_on_user_investor_id"
   end
 
   create_table "product_invest_details", force: :cascade do |t|
@@ -103,6 +115,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_035742) do
   end
 
   add_foreign_key "kecamatans", "regionals"
+  add_foreign_key "payment_details", "user_investors"
   add_foreign_key "product_invest_details", "product_invests"
   add_foreign_key "product_invests", "products"
   add_foreign_key "products", "kecamatans"
