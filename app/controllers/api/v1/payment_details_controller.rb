@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Api::V1::PaymentDetailsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :find_paymentdetail, only: %i[show update]
@@ -35,86 +34,11 @@ class Api::V1::PaymentDetailsController < ApplicationController
     else
       render json: { message: 'failed inserted' }, status: :unprocessable_entity
     end
-=======
-# frozen_string_literal: true
-
-class Api::V1::PaymentDetailsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
-  def index
-    paydetail = PaymentDetail.all
-    if paydetail.present?
-      render json: paydetail, status: :ok
-    else
-      render json: { message_error: 'PaymentDetails not found' }, status: :unprocessable_entity
-    end
- end
-
-  def show
-    #find_PaymentDetail
-    #@paydetail =PaymentDetail.find(params[:id])
-    if @paydetail.present?
-      render json: @paydetail, status: :ok
-    else
-      render json: { message_error: 'PaymentDetails not found' }, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    find_PaymentDetail
-    if @paydetail.destroy!
-      render json: { message: 'success deleted PaymentDetails' }, status: :ok
-
-      def destroy
-        @paydetail = PaymentDetail.find(params[:id])
-        @paydetail.destroy
-
-        redirect_to action: :destroy
-      end
-    else
-      render json: { message: 'failed deleted PaymentDetails' }, status: :unprocessable_entity
-    end
-  end
-
-
-    def create
-      @paydetail = PaymentDetail.new(params[:paydetail])
-      if @paydetail.save
-         redirect_to :action => 'list'
-      else
-         @paydetail = Subject.find(:all)
-         render :action => 'new'
-      end
-   end
-
-   def update
-     @paydetail = PaymentDetail.find(params[:id])
-
-    if @paydetail.update(payment_detail_params)
-      render json: { status: 'OK', msg: 'Payment Detail have been updated', error:'nill', }
-    else
-      not_good
-    end
-    end
-
-
-  def create
-    @paydetail = PaymentDetail.new(payment_details_params)
-    if @paydetail.save
-      render json: {message: 'success to insert'}, status: :created
-    else
-      render json: {message: 'failed inserted'}, status: :unprocessable_entity
-      end
->>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
   end
 
   private
 
-<<<<<<< HEAD
   def find_paymentdetail
-=======
-  def find_PaymentDetail
->>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
     @paydetail = PaymentDetail.find_by(id: params[:id])
   end
 
@@ -122,12 +46,7 @@ class Api::V1::PaymentDetailsController < ApplicationController
     render json: { message: 'failed' }
   end
 
-<<<<<<< HEAD
   def payment_details_params
     params.require(:paymentdetail).permit(:card_number, :card_valid_date, :cvv, :isPaid)
-=======
-  def payment_detail_params
-    params.require(:paymentdetail).permit(:card_number, :card_valid_date, :cvv)
->>>>>>> 8153d9566e3392e1c2e9992a65c0dc5f42410809
   end
 end

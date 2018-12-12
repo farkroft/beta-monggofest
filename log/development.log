@@ -40844,3 +40844,700 @@ Migrating to RemovePasswordDigestColumns (20181210035742)
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
 >>>>>>> 21bf73560634017023796157fe3645090dc75c2e
+Started GET "/api/v1/payment_details/2" for 127.0.0.1 at 2018-12-12 09:09:38 +0700
+  [1m[35m (39.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:10:03 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/payment_detail" for 127.0.0.1 at 2018-12-12 09:10:08 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (102.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (633.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_development"[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (241.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_test"[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_development"[0m
+  ↳ bin/rails:13
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonggoFest_test"[0m
+  ↳ bin/rails:13
+Started PATCH "/api/v1/payment_details/2" for 127.0.0.1 at 2018-12-12 09:26:51 +0700
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "MonggoFest_development" does not exist
+):
+  
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:696:in `rescue in connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:691:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1010:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1868.8ms)[0m  [1m[35mCREATE DATABASE "MonggoFest_development" ENCODING = 'unicode'[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (849.4ms)[0m  [1m[35mCREATE DATABASE "MonggoFest_test" ENCODING = 'unicode'[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (174.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (149.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateUsers (20181122112548)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (141.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying, "role" character varying DEFAULT 'user' NOT NULL, "last_login" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181122112548_create_users.rb:5
+  [1m[35m (94.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20181122112548_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181122112548"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to AddPasswordResetColumnsToUser (20181125023908)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20181125023908_add_password_reset_columns_to_user.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20181125023908_add_password_reset_columns_to_user.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181125023908"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProvinces (20181129073812)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (118.5ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181129073812_create_provinces.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073812"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (28.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateRegionals (20181129073911)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (146.4ms)[0m  [1m[35mCREATE TABLE "regionals" ("id" bigserial primary key, "province_id" bigint, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_86c19baa1a"
+FOREIGN KEY ("province_id")
+  REFERENCES "provinces" ("id")
+)[0m
+  ↳ db/migrate/20181129073911_create_regionals.rb:3
+  [1m[35m (51.1ms)[0m  [1m[35mCREATE  INDEX  "index_regionals_on_province_id" ON "regionals"  ("province_id")[0m
+  ↳ db/migrate/20181129073911_create_regionals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073911"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateKecamatans (20181129073945)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (128.2ms)[0m  [1m[35mCREATE TABLE "kecamatans" ("id" bigserial primary key, "regional_id" bigint, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_eb9fd12a70"
+FOREIGN KEY ("regional_id")
+  REFERENCES "regionals" ("id")
+)[0m
+  ↳ db/migrate/20181129073945_create_kecamatans.rb:3
+  [1m[35m (87.6ms)[0m  [1m[35mCREATE  INDEX  "index_kecamatans_on_regional_id" ON "kecamatans"  ("regional_id")[0m
+  ↳ db/migrate/20181129073945_create_kecamatans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073945"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductTypes (20181129074146)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (87.5ms)[0m  [1m[35mCREATE TABLE "product_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181129074146_create_product_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129074146"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProducts (20181129074243)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (150.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "kecamatan_id" bigint, "product_type_id" bigint, "name" character varying, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_652c924544"
+FOREIGN KEY ("kecamatan_id")
+  REFERENCES "kecamatans" ("id")
+, CONSTRAINT "fk_rails_8464b8e5d7"
+FOREIGN KEY ("product_type_id")
+  REFERENCES "product_types" ("id")
+)[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_kecamatan_id" ON "products"  ("kecamatan_id")[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[35m (39.5ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_product_type_id" ON "products"  ("product_type_id")[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129074243"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (21.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductInvests (20181129092635)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (101.4ms)[0m  [1m[35mCREATE TABLE "product_invests" ("id" bigserial primary key, "product_id" bigint, "price" float, "slot" integer, "count_view" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6aa2ac7487"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20181129092635_create_product_invests.rb:3
+  [1m[35m (46.8ms)[0m  [1m[35mCREATE  INDEX  "index_product_invests_on_product_id" ON "product_invests"  ("product_id")[0m
+  ↳ db/migrate/20181129092635_create_product_invests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129092635"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductInvestDetails (20181129092850)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (100.5ms)[0m  [1m[35mCREATE TABLE "product_invest_details" ("id" bigserial primary key, "product_invest_id" bigint, "description" text, "period" integer, "return_value" integer, "share_periode" integer, "background" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_326c5d8f80"
+FOREIGN KEY ("product_invest_id")
+  REFERENCES "product_invests" ("id")
+)[0m
+  ↳ db/migrate/20181129092850_create_product_invest_details.rb:3
+  [1m[35m (81.1ms)[0m  [1m[35mCREATE  INDEX  "index_product_invest_details_on_product_invest_id" ON "product_invest_details"  ("product_invest_id")[0m
+  ↳ db/migrate/20181129092850_create_product_invest_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129092850"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to AddDeviseToUsers (20181204115829)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (155.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181204115829_add_devise_to_users.rb:8
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20181204115829_add_devise_to_users.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181204115829"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (74.5ms)[0m  [1m[35mCREATE TABLE "user_investors" ("id" bigserial primary key, "user_id" bigint, "product_invests_id" bigint, "investor_slot" integer, "investor_pay" float, "invest_year" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c692bc9a04"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_35dabd55ac"
+FOREIGN KEY ("product_invests_id")
+  REFERENCES "product_invests" ("id")
+)[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (59.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_user_id" ON "user_investors"  ("user_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_product_invests_id" ON "user_investors"  ("product_invests_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205072620"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to AddPaymentMethodToPaymentDetail (20181205090816)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "payment_details" ADD "payment_method" integer[0m
+  ↳ db/migrate/20181205090816_add_payment_method_to_payment_detail.rb:3
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateSliders (20181205162408)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (157.7ms)[0m  [1m[35mCREATE TABLE "sliders" ("id" bigserial primary key, "name" character varying, "image" character varying, "url" character varying, "sort_number" integer, "isActive" boolean DEFAULT TRUE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205162408_create_sliders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205162408"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (37.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to RemovePasswordDigestColumns (20181210035742)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "password_digest"[0m
+  ↳ db/migrate/20181210035742_remove_password_digest_columns.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181210035742"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (55.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreatePaymentDetails (20181210064716)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (108.5ms)[0m  [1m[35mCREATE TABLE "payment_details" ("id" bigserial primary key, "user_investor_id" bigint, "payment_method" integer, "card_number" character varying, "card_valid_date" date, "cvv" character varying, "isPaid" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8500a07cc3"
+FOREIGN KEY ("user_investor_id")
+  REFERENCES "user_investors" ("id")
+)[0m
+  ↳ db/migrate/20181210064716_create_payment_details.rb:3
+  [1m[35m (48.0ms)[0m  [1m[35mCREATE  INDEX  "index_payment_details_on_user_investor_id" ON "payment_details"  ("user_investor_id")[0m
+  ↳ db/migrate/20181210064716_create_payment_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181210064716"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (31.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-12 02:30:22.219521"], ["updated_at", "2018-12-12 02:30:22.219521"]]
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/bin/rake:23
+Started PATCH "/api/v1/payment_details/2" for 127.0.0.1 at 2018-12-12 09:30:37 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/payment_details/2"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:31:43 +0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/payment_details"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:31:52 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (1.2ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 500 Internal Server Error in 82ms (Views: 49.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:35:55 +0700
+Processing by Api::V1::PaymentDetailsController#create as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"654321", "card_valid_date"=>"2018-19-6", "cvv"=>"476", "isPaid"=>false}, "payment_detail"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[36mPaymentDetail Create (7.4ms)[0m  [1m[32mINSERT INTO "payment_details" ("card_number", "cvv", "isPaid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["card_number", "654321"], ["cvv", "476"], ["isPaid", false], ["created_at", "2018-12-12 02:35:55.719224"], ["updated_at", "2018-12-12 02:35:55.719224"]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[35m (71.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 201 Created in 110ms (Views: 1.2ms | ActiveRecord: 82.6ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:01 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.5ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (0.41ms)
+Completed 200 OK in 176ms (Views: 88.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:16 +0700
+Processing by Api::V1::PaymentDetailsController#create as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"654321", "card_valid_date"=>"2018-19-6", "cvv"=>"476", "isPaid"=>false}, "payment_detail"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[36mPaymentDetail Create (1.4ms)[0m  [1m[32mINSERT INTO "payment_details" ("card_number", "cvv", "isPaid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["card_number", "654321"], ["cvv", "476"], ["isPaid", false], ["created_at", "2018-12-12 02:36:16.216877"], ["updated_at", "2018-12-12 02:36:16.216877"]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[35m (122.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 201 Created in 132ms (Views: 2.0ms | ActiveRecord: 123.7ms)
+
+
+Started POST "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:17 +0700
+Processing by Api::V1::PaymentDetailsController#create as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"654321", "card_valid_date"=>"2018-19-6", "cvv"=>"476", "isPaid"=>false}, "payment_detail"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[36mPaymentDetail Create (0.4ms)[0m  [1m[32mINSERT INTO "payment_details" ("card_number", "cvv", "isPaid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["card_number", "654321"], ["cvv", "476"], ["isPaid", false], ["created_at", "2018-12-12 02:36:17.731662"], ["updated_at", "2018-12-12 02:36:17.731662"]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[35m (62.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 201 Created in 69ms (Views: 2.1ms | ActiveRecord: 62.8ms)
+
+
+Started POST "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:18 +0700
+Processing by Api::V1::PaymentDetailsController#create as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"654321", "card_valid_date"=>"2018-19-6", "cvv"=>"476", "isPaid"=>false}, "payment_detail"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[36mPaymentDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "payment_details" ("card_number", "cvv", "isPaid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["card_number", "654321"], ["cvv", "476"], ["isPaid", false], ["created_at", "2018-12-12 02:36:18.697474"], ["updated_at", "2018-12-12 02:36:18.697474"]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[35m (118.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 201 Created in 129ms (Views: 2.0ms | ActiveRecord: 119.5ms)
+
+
+Started POST "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:19 +0700
+Processing by Api::V1::PaymentDetailsController#create as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"654321", "card_valid_date"=>"2018-19-6", "cvv"=>"476", "isPaid"=>false}, "payment_detail"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[36mPaymentDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "payment_details" ("card_number", "cvv", "isPaid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["card_number", "654321"], ["cvv", "476"], ["isPaid", false], ["created_at", "2018-12-12 02:36:19.672018"], ["updated_at", "2018-12-12 02:36:19.672018"]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+  [1m[35m (68.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:32
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 201 Created in 78ms (Views: 1.1ms | ActiveRecord: 69.2ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 09:36:29 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.4ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (2.5ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 13:56:42 +0700
+  [1m[35m (48.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (123.3ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (3.15ms)
+Completed 200 OK in 441ms (Views: 116.4ms | ActiveRecord: 278.3ms)
+
+
+Started GET "/api/v1/payment_details/3" for 127.0.0.1 at 2018-12-12 14:00:23 +0700
+Processing by Api::V1::PaymentDetailsController#show as */*
+  Parameters: {"id"=>"3", "payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.6ms)[0m  [1m[34mSELECT  "payment_details".* FROM "payment_details" WHERE "payment_details"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:42
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with PaymentDetail (0.6ms)
+Completed 200 OK in 145ms (Views: 57.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/api/v1/payment_details/3" for 127.0.0.1 at 2018-12-12 14:03:59 +0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/payment_details/3"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/v1/payment_detail/3" for 127.0.0.1 at 2018-12-12 14:04:45 +0700
+Processing by Api::V1::PaymentDetailsController#update as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"111111111111111288888888888888", "card_valid_date"=>"2018-19-6", "cvv"=>"47623", "isPaid"=>false}, "id"=>"3", "payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.4ms)[0m  [1m[34mSELECT  "payment_details".* FROM "payment_details" WHERE "payment_details"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+  [1m[36mPaymentDetail Update (173.0ms)[0m  [1m[33mUPDATE "payment_details" SET "card_number" = $1, "cvv" = $2, "updated_at" = $3 WHERE "payment_details"."id" = $4[0m  [["card_number", "111111111111111288888888888888"], ["cvv", "47623"], ["updated_at", "2018-12-12 07:04:45.549171"], ["id", 3]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+  [1m[35m (213.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.19ms)
+Completed 200 OK in 418ms (Views: 23.8ms | ActiveRecord: 387.2ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 14:05:02 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.4ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (3.15ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 14:28:30 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (1.1ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (2.6ms)
+Completed 200 OK in 13ms (Views: 4.6ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/api/v1/payment_detail/3" for 127.0.0.1 at 2018-12-12 14:29:03 +0700
+Processing by Api::V1::PaymentDetailsController#update as */*
+  Parameters: {"paymentdetail"=>{"card_number"=>"123456789", "card_valid_date"=>"2018-19-6", "cvv"=>"47623", "isPaid"=>false}, "id"=>"3", "payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.5ms)[0m  [1m[34mSELECT  "payment_details".* FROM "payment_details" WHERE "payment_details"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+  [1m[36mPaymentDetail Update (0.7ms)[0m  [1m[33mUPDATE "payment_details" SET "card_number" = $1, "updated_at" = $2 WHERE "payment_details"."id" = $3[0m  [["card_number", "123456789"], ["updated_at", "2018-12-12 07:29:03.726637"], ["id", 3]]
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+  [1m[35m (72.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:23
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 82ms (Views: 0.9ms | ActiveRecord: 74.4ms)
+
+
+Started GET "/api/v1/payment_details" for 127.0.0.1 at 2018-12-12 14:29:16 +0700
+Processing by Api::V1::PaymentDetailsController#index as */*
+  Parameters: {"payment_detail"=>{}}
+  [1m[36mPaymentDetail Load (0.5ms)[0m  [1m[34mSELECT "payment_details".* FROM "payment_details"[0m
+  ↳ app/controllers/api/v1/payment_details_controller.rb:7
+No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, payment_method: nil, card_number: "654321", card_valid_date: nil, cvv: "476", isPaid: false, created_at: "2018-12-12 02:35:55", updated_at: "2018-12-12 02:35:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with PaymentDetail::ActiveRecord_Relation (3.4ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
