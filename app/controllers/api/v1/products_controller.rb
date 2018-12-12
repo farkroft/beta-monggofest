@@ -34,18 +34,18 @@ end
 
 # method to show specific product
 def show
-  
-if @product.present?
-  render json: {
-    status: 'OK', results: @product, error: nil
-  }, status: :ok
-else
-  render json: {
-    status: 'FAIL', results: nil, error: 'Data not found'
-  }, status: :unprocessable_entity
-end
-end
-
+  @product = Product.find(params[:id])
+      if @product.present?
+          data = @product.as_json(include: %i[gambars])
+    render json: {
+      status: 'OK', results: data, error: nil
+    }, status: :ok
+  else
+    render json: {
+      status: 'FAIL', results: nil, error: 'Data not found'
+    }, status: :unprocessable_entity
+  end
+  end
 # method to update product that have exist
 def update
 @product = Product.find(params[:id])
