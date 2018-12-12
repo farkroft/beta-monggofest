@@ -3,7 +3,7 @@ class Api::V1::ProductInvestsController < ApplicationController
     prodinvests = ProductInvest.all
     if prodinvests.present?
       data = prodinvests.as_json(include: %i[product kecamatan
-                                             regional province])
+                                             regional province gambars])
       render json: {
         status: 'OK', results: data, error: nil
       }, status: :ok

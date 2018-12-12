@@ -7,7 +7,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
+
 # require 'csv'
 
 # csv_text = File.read(Rails.root.join('lib', 'seeds' , 'regional.csv'))
@@ -18,7 +18,7 @@
 # #r.save
 # puts row.to_hash
 # end
-=======
+
 @prov = Province.all
 @reg = Regional.all
 @kec = Kecamatan.all
@@ -52,4 +52,3 @@ else
     puts row.to_hash
   end
 end
->>>>>>> 5bbe61a964433563dc8ad2d0d884314164abd829

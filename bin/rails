@@ -1,19 +1,13 @@
 #!/usr/bin/env ruby
-<<<<<<< HEAD
 
 # frozen_string_literal: true
 
-=======
->>>>>>> 5bbe61a964433563dc8ad2d0d884314164abd829
 begin
   load File.expand_path('spring', __dir__)
 rescue LoadError => e
   raise unless e.message.include?('spring')
 end
-<<<<<<< HEAD
 
-=======
->>>>>>> 5bbe61a964433563dc8ad2d0d884314164abd829
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
 require 'rails/commands'

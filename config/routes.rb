@@ -10,19 +10,17 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-<<<<<<< HEAD
       # user_action product_detail
       get 'prodinvests', to: 'product_invests#index'
       get 'prodinvest/:id', to: 'product_invests#show'
       get 'proinvdetail/:id', to: 'product_invest_details#show'
 
-=======
       resources :products
       resources :product_types
       resources :provinces
       resources :regionals
       # User actions
->>>>>>> 5bbe61a964433563dc8ad2d0d884314164abd829
+
       post 'password/forgot', to: 'passwords#forgot'
       post 'password/reset', to: 'passwords#reset'
       get    '/users'          => 'users#index'

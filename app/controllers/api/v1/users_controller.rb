@@ -2,6 +2,7 @@
 
 class Api::V1::UsersController < ApplicationController
   before_action :authenticate_user, only: [:update]
+  skip_before_action :verify_authenticity_token
   # Should work if the current_user is authenticated.
   def index
     if current_user
