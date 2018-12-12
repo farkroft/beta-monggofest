@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProductInvestTest < ActiveSupport::TestCase
+class Api::V1::RegionalsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
