@@ -39,6 +39,12 @@ Rails.application.routes.draw do
       post 'sliders', to: 'sliders#create'
       put 'sliders/:id', to: 'sliders#update'
       delete 'sliders/:id', to: 'sliders#destroy'
+      # routes for user investor
+      get 'userinvest', to: 'user_investors#index'
+      get 'userinvest/:id', to: 'user_investors#show'
+      post 'userinvest', to: 'user_investors#create'
+      put 'userinvest/:id', to: 'user_investors#update'
+      delete 'userinvest/:id', to: 'user_investors#destroy'
     end
   end
 end

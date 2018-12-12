@@ -20,7 +20,11 @@ class Api::V1::ProductInvestsController < ApplicationController
     }, status: :unprocessable_entity
   end
 
+  def find_prodinvest
+    @prodinvest = ProductInvest.find_by(id: params[:id])
+  end
+
   def prodinvest_params
-    params.require(:prodinvest).permit(:price, :slot)
+    params.require(:prodinvest).permit(:price, :slot, :count_view)
   end
 end
