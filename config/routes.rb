@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :products
-        resources :product_types
-          resources :provinces
-            resources :regionals
+      resources :product_types
+      resources :provinces
+      resources :regionals
       # User actions
       post 'password/forgot', to: 'passwords#forgot'
       post 'password/reset', to: 'passwords#reset'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       get 'all'                => 'home#all'
       # Get login token from Knock
       post 'user_token' => 'user_token#create'
-      
+
       # api for slider
       get 'sliders', to: 'sliders#index'
       get 'sliders/:id', to: 'sliders#show'

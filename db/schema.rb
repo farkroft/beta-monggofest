@@ -10,76 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_142151) do
-
+ActiveRecord::Schema.define(version: 20_181_211_142_151) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "gambars", force: :cascade do |t|
-    t.bigint "product_id"
-    t.string "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_gambars_on_product_id"
+  create_table 'gambars', force: :cascade do |t|
+    t.bigint 'product_id'
+    t.string 'photo'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['product_id'], name: 'index_gambars_on_product_id'
   end
 
-  create_table "kecamatans", force: :cascade do |t|
-    t.bigint "regional_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
+  create_table 'kecamatans', force: :cascade do |t|
+    t.bigint 'regional_id'
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['regional_id'], name: 'index_kecamatans_on_regional_id'
   end
 
-  create_table "products", force: :cascade do |t|
-    t.bigint "kecamatan_id"
-    t.integer "product_type", default: 0
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["kecamatan_id"], name: "index_products_on_kecamatan_id"
+  create_table 'products', force: :cascade do |t|
+    t.bigint 'kecamatan_id'
+    t.integer 'product_type', default: 0
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['kecamatan_id'], name: 'index_products_on_kecamatan_id'
   end
 
-  create_table "provinces", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'provinces', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "regionals", force: :cascade do |t|
-    t.bigint "province_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["province_id"], name: "index_regionals_on_province_id"
+  create_table 'regionals', force: :cascade do |t|
+    t.bigint 'province_id'
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['province_id'], name: 'index_regionals_on_province_id'
   end
 
-  create_table "sliders", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.string "url"
-    t.integer "sort_number"
-    t.boolean "isActive", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'sliders', force: :cascade do |t|
+    t.string 'name'
+    t.string 'image'
+    t.string 'url'
+    t.integer 'sort_number'
+    t.boolean 'isActive', default: true
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "role", default: "user", null: false
-    t.datetime "last_login"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.string "encrypted_password", default: "", null: false
-    t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email"
+  create_table 'users', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'email', null: false
+    t.string 'role', default: 'user', null: false
+    t.datetime 'last_login'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.string 'encrypted_password', default: '', null: false
+    t.datetime 'remember_created_at'
+    t.index ['email'], name: 'index_users_on_email'
   end
 
-  add_foreign_key "gambars", "products"
-  add_foreign_key "kecamatans", "regionals"
-  add_foreign_key "products", "kecamatans"
-  add_foreign_key "regionals", "provinces"
+  add_foreign_key 'gambars', 'products'
+  add_foreign_key 'kecamatans', 'regionals'
+  add_foreign_key 'products', 'kecamatans'
+  add_foreign_key 'regionals', 'provinces'
 end
