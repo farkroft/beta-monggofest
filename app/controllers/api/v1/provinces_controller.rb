@@ -2,7 +2,7 @@ class Api::V1::ProvincesController < ApplicationController
     protect_from_forgery with: :null_session
     protect_from_forgery with: :null_session
  
-    ef index
+    def index
     provinces = Province.all
     if provinces.present?
       render json: {
@@ -13,6 +13,7 @@ class Api::V1::ProvincesController < ApplicationController
         status: 'FAIL', results: nil, error: 'Data is empty'
       }, status: :unprocessable_entity
     end
+    end 
     def show
     @prov = Province.find(params[:id])
     

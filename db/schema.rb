@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_115829) do
+ActiveRecord::Schema.define(version: 2018_12_11_142151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gambars", force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_gambars_on_product_id"
+  end
 
   create_table "kecamatans", force: :cascade do |t|
     t.bigint "regional_id"
@@ -23,22 +31,13 @@ ActiveRecord::Schema.define(version: 2018_12_04_115829) do
     t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
   end
 
-  create_table "product_types", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.bigint "kecamatan_id"
-    t.bigint "product_type_id"
+    t.integer "product_type", default: 0
     t.string "name"
-    t.string "image"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kecamatan_id"], name: "index_products_on_kecamatan_id"
-    t.index ["product_type_id"], name: "index_products_on_product_type_id"
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -70,8 +69,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_115829) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "gambars", "products"
   add_foreign_key "kecamatans", "regionals"
   add_foreign_key "products", "kecamatans"
-  add_foreign_key "products", "product_types"
   add_foreign_key "regionals", "provinces"
 end

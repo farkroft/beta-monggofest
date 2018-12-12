@@ -34,6 +34,7 @@ end
 
 # method to show specific product
 def show
+  
 if @product.present?
   render json: {
     status: 'OK', results: @product, error: nil
