@@ -9,3 +9,4 @@ class ProductInvest < ApplicationRecord
   # has_many :regional, through: :product
   # has_one :province, through: :product, source: :regional
 end
+

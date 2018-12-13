@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+ #frozen_string_literal: true
 
 Rails.application.routes.draw do
 
@@ -41,7 +41,8 @@ Rails.application.routes.draw do
       put 'sliders/:id', to: 'sliders#update'
       delete 'sliders/:id', to: 'sliders#destroy'
 
-        # routes for user investor
+
+
       get 'userinvest', to: 'user_investors#index'
       get 'userinvest/:id', to: 'user_investors#show'
       post 'userinvest', to: 'user_investors#create'
@@ -51,3 +52,7 @@ Rails.application.routes.draw do
     end
   end
 end
+
+
+
+
