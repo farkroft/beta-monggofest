@@ -34,7 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'knock'
 gem 'rack-cors'
-gem 'rubocop'
+# gem 'rubocop', '~> 0.61.1', require: false
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'cancan'
