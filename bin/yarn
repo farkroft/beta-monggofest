@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+<<<<<<< HEAD
+=======
+# frozen_string_literal: true
+
+>>>>>>> 815941e9e3f23d1bac59a9006bab048686cead55
 APP_ROOT = File.expand_path('..', __dir__)
 Dir.chdir(APP_ROOT) do
   exec 'yarnpkg', *ARGV

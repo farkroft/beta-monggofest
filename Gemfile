@@ -62,6 +62,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+<<<<<<< HEAD
 gem 'cancan'
 gem 'devise'
 gem 'font-awesome-sass'
@@ -70,4 +71,9 @@ gem 'rack-cors'
 gem 'rails_admin'
 gem 'rails_admin_import', '~> 2.1'
 gem 'rails_admin_rollincode'
+=======
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+>>>>>>> 815941e9e3f23d1bac59a9006bab048686cead55
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
