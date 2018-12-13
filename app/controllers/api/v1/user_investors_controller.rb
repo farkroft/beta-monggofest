@@ -1,6 +1,4 @@
 class Api::V1::UserInvestorsController < ApplicationController
-  
-
   def new
     @userin = UserInvestor.new
   end

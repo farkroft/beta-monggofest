@@ -113,7 +113,9 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.2.0)
+
       concurrent-ruby (~> 1.0)
+
     io-like (0.3.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)

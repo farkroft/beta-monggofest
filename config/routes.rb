@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users
@@ -41,14 +42,13 @@ Rails.application.routes.draw do
       put 'sliders/:id', to: 'sliders#update'
       delete 'sliders/:id', to: 'sliders#destroy'
 
-
+      # routes for user investor
 
       get 'userinvest', to: 'user_investors#index'
       get 'userinvest/:id', to: 'user_investors#show'
       post 'userinvest', to: 'user_investors#create'
       put 'userinvest/:id', to: 'user_investors#update'
       delete 'userinvest/:id', to: 'user_investors#destroy'
-
     end
   end
 end
