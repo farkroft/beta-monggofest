@@ -6,7 +6,8 @@ class Api::V1::ProductInvestDetailsController < ApplicationController
   def show
     if @proinvdetail.present?
       popular
-      data = @proinvdetail.as_json(include: %i[product_invest product])
+      data = @proinvdetail.as_json(include: %i[product_invest 
+      											product gambars])
       render json: {
         status: 'OK', results: data, error: nil
       },

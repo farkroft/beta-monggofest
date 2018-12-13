@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-
-
-
 ActiveRecord::Schema.define(version: 2018_12_11_142151) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.datetime "updated_at", null: false
     t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
   end
-
 
   create_table "payment_details", force: :cascade do |t|
     t.bigint "user_investor_id"
@@ -147,6 +140,3 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
   add_foreign_key "user_investors", "product_invests", column: "product_invests_id"
   add_foreign_key "user_investors", "users"
 end
-
-
-
