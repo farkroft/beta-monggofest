@@ -1,4 +1,5 @@
 class Api::V1::ProductInvestsController < ApplicationController
+
   def index
     prodinvests = ProductInvest.all
     if prodinvests.present?
