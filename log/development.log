@@ -41541,3 +41541,658 @@ No serializer found for resource: #<PaymentDetail id: 1, user_investor_id: nil, 
 Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.5ms)
 
 
+<<<<<<< HEAD
+=======
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to RemovePasswordDigestColumns (20181210035742)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (48.2ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "password_digest"[0m
+  ↳ db/migrate/20181210035742_remove_password_digest_columns.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181210035742"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (39.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+<<<<<<< HEAD
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-11 13:17:16 +0700
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (7.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "68000f6da7dd63b1285d"], ["reset_password_sent_at", "2018-12-11 06:17:17.222223"], ["updated_at", "2018-12-11 06:17:17.233410"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (44.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.7ms)
+UserMailer#reset_password: processed outbound mail in 75.7ms
+Sent mail to refiqi@example.com (1147.8ms)
+Date: Tue, 11 Dec 2018 13:17:17 +0700
+From: monggovest1@example.com
+To: refiqi@example.com
+Message-ID: <5c0f566da5413_18502b27293fa7c07690@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1686ms (Views: 16.9ms | ActiveRecord: 99.4ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-11 14:21:43 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "updated_at" = $2, "reset_password_sent_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "cd93c079152469285205"], ["updated_at", "2018-12-11 07:22:17.477121"], ["reset_password_sent_at", "2018-12-11 07:22:17.473004"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (1.0ms)
+UserMailer#reset_password: processed outbound mail in 109.5ms
+Sent mail to refiqi@example.com (1703.3ms)
+Date: Tue, 11 Dec 2018 14:22:17 +0700
+From: monggovest1@example.com
+To: refiqi@example.com
+Message-ID: <5c0f65a9b70ea_2b102af8f44bf7cc65698@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=68000f6da7dd63b1285d
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 35791ms (Views: 21.1ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-11 14:22:34 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "5f0ecde07aa7578009ae"], ["reset_password_sent_at", "2018-12-11 07:23:11.514406"], ["updated_at", "2018-12-11 07:23:11.517689"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.5ms)
+UserMailer#reset_password: processed outbound mail in 6.7ms
+Sent mail to refiqi@example.com (1245.4ms)
+Date: Tue, 11 Dec 2018 14:23:11 +0700
+From: monggovest1@example.com
+To: refiqi@example.com
+Message-ID: <5c0f65df89092_2b102af8f44bf68c6579@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=cd93c079152469285205
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 38122ms (Views: 12.1ms | ActiveRecord: 22.5ms)
+
+
+Started POST "/api/v1/users/create" for 127.0.0.1 at 2018-12-11 14:37:22 +0700
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"refyfadhila96@gmail.com", "password"=>"[FILTERED]", "name"=>"refiqi", "role"=>"admin"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refyfadhila96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refyfadhila96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Create (26.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "created_at", "updated_at", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "refiqi"], ["email", "refyfadhila96@gmail.com"], ["role", "admin"], ["created_at", "2018-12-11 07:37:23.040995"], ["updated_at", "2018-12-11 07:37:23.040995"], ["encrypted_password", "$2a$11$lOG8nXbuXIK6oYNIgkddVewSsAcZqqVGWMBtPw.8AIh3A1F4PK0uO"]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 201 Created in 250ms (Views: 11.8ms | ActiveRecord: 65.7ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-11 14:37:51 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refyfadhila96@gmail.com", "password"=>{"email"=>"refyfadhila96@gmail.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refyfadhila96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refyfadhila96@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "e4a138226c755af07a3f"], ["reset_password_sent_at", "2018-12-11 07:37:51.431072"], ["updated_at", "2018-12-11 07:37:51.434390"], ["id", 4]]
+  ↳ app/models/user.rb:34
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.4ms)
+UserMailer#reset_password: processed outbound mail in 8.9ms
+Sent mail to refyfadhila96@gmail.com (2230.8ms)
+Date: Tue, 11 Dec 2018 14:37:51 +0700
+From: monggovest1@example.com
+To: refyfadhila96@gmail.com
+Message-ID: <5c0f694f72a1d_2b102af8f44bf7cc65871@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2274ms (Views: 1.1ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-11 14:40:54 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refyfadhila96@gmail.com", "password"=>{"email"=>"refyfadhila96@gmail.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refyfadhila96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refyfadhila96@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "4557350573355d8eb445"], ["reset_password_sent_at", "2018-12-11 07:40:55.072625"], ["updated_at", "2018-12-11 07:40:55.075500"], ["id", 4]]
+  ↳ app/models/user.rb:34
+  [1m[35m (44.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.9ms)
+UserMailer#reset_password: processed outbound mail in 23.2ms
+Sent mail to refyfadhila96@gmail.com (1254.2ms)
+Date: Tue, 11 Dec 2018 14:40:55 +0700
+From: postmaster@presensi.muhammadhendra.com
+To: refyfadhila96@gmail.com
+Message-ID: <5c0f6a072df2f_2b102af8f44bf4e8659e2@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get you password reset.
+  </p>
+  <p>
+  	localhost/password/reset=e4a138226c755af07a3f
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1513ms (Views: 13.5ms | ActiveRecord: 51.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:00:23 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (26.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateSliders (20181205162408)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (562.5ms)[0m  [1m[35mCREATE TABLE "sliders" ("id" bigserial primary key, "name" character varying, "image" character varying, "url" character varying, "sort_number" integer, "isActive" boolean DEFAULT TRUE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181205162408_create_sliders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205162408"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (26.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:00:48 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+Completed 401 Unauthorized in 108ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:00:49 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 17466ms (Views: 17438.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:02:19 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Er0ZAcMiDuBqIYzfiSAKKo5dF+2NHRNfUS02h9LwT/t+Y3uxQ24iejiwJtfEkdkthnRhF+2XUTI+WrCn3w2R0Q==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 362ms (ActiveRecord: 5.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Er0ZAcMiDuBqIYzfiSAKKo5dF+2NHRNfUS02h9LwT/t+Y3uxQ24iejiwJtfEkdkthnRhF+2XUTI+WrCn3w2R0Q==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 322ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:02:22 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"70xz87lHemvG8I+t/baDpNHH/BsVZj9BWceBXgKJ+LGDkhFDOQtW8ZRhJaWwB1Cj2e6K4XXsfSw2sAd+D3Qmmw==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 249ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"70xz87lHemvG8I+t/baDpNHH/BsVZj9BWceBXgKJ+LGDkhFDOQtW8ZRhJaWwB1Cj2e6K4XXsfSw2sAd+D3Qmmw==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 322ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:02:29 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bvUAwIE/cLB6oHdLiMgO3hcmWubmsQpJHopK0T+5AAkCK2JwAXNcKigx3UPFed3ZHw8sHIY7SCRx/czxMkTeIw==", "user"=>{"email"=>"fireint96@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fireint96@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bvUAwIE/cLB6oHdLiMgO3hcmWubmsQpJHopK0T+5AAkCK2JwAXNcKigx3UPFed3ZHw8sHIY7SCRx/czxMkTeIw==", "user"=>{"email"=>"fireint96@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 343ms (Views: 97.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/all" for 127.0.0.1 at 2018-12-11 15:03:01 +0700
+Processing by Api::V1::HomeController#all as */*
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:03:44 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ib3axjxC72I98FO3Wrpnls4hmEE90orxNNlEsDG33I3lY7h2vA7D+G9h+b8XC7SRxgjuu11YyJxbrsKQPEoCpw==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 394ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:03:44 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering pages/sign_in.html.erb within layouts/application
+  Rendered pages/sign_in.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 119ms (Views: 114.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-12-11 15:03:50 +0700
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:5
+  [1m[35m (34.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "sliders"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" ORDER BY "sliders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (34.0ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (24.4ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (36.4ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.7ms)
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (8.5ms)
+Completed 200 OK in 2064ms (Views: 934.1ms | ActiveRecord: 42.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-12-11 15:04:16 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DBiKOf69v2WRB6qJOnc70YZ3TCVGNcea8pPnlq2+vPPOt4TI2WT23WiplP33cg/OIkyVHA3xDTZmH8dT4mg8XA=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:04:16 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:04:16 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:07:34 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:07:34 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 2317ms (Views: 2280.6ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:07:45 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"axDp1c3tUWsldzd2dv92x3R6QK0sBhy54sFYdc7DPxhic/Il20hp5Qcy+IH+FNWj/icwpbzh8b3/aJdxp0W6RA==", "user"=>{"email"=>"refiqi@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 291ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:07:46 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering pages/sign_in.html.erb within layouts/application
+  Rendered pages/sign_in.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 139ms (Views: 134.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-12-11 15:07:49 +0700
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:5
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "sliders"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" ORDER BY "sliders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (30.0ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (19.7ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (33.4ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.8ms)
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (14.3ms)
+Completed 200 OK in 1491ms (Views: 772.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/admin/slider?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-11 15:07:54 +0700
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"slider"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:5
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" ORDER BY sliders.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (187.5ms)
+Completed 200 OK in 357ms (Views: 305.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/slider/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-11 15:08:00 +0700
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"slider"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:5
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (3.5ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_file_upload.html.haml (95.3ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (11.6ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_boolean.html.haml (4.2ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (13.3ms)
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (170.6ms)
+Completed 200 OK in 287ms (Views: 258.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2018-12-11 15:09:00 +0700
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "sliders"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT  "sliders".* FROM "sliders" ORDER BY "sliders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered /home/refiqi/.rvm/gems/ruby-2.5.3/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (22.5ms)
+Completed 200 OK in 67ms (Views: 48.6ms | ActiveRecord: 5.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-12-11 15:09:04 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n76V9sWpOJtfjWa9yf9UW1RwBGGjtJ5FGuYP4ZvKsU3rVHa/M194j0cxRz93/hhM9+aepEbtyQfkItewa8E0Cg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 15:09:04 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"sign_in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-11 15:09:04 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 104ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+=======
+<<<<<<< HEAD
+>>>>>>> 41dc7f537a3af939741f380f270403283d8dc9bc
+=======
+>>>>>>> 21bf73560634017023796157fe3645090dc75c2e
+>>>>>>> adfca7a0f1bb75b50ea05939e09d82c8a3d077a0
+>>>>>>> 785385b4f3aa66f562a72cb429cc5b67cba51afb
