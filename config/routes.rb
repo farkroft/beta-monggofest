@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+ #frozen_string_literal: true
 
 Rails.application.routes.draw do
   devise_for :users
@@ -16,12 +16,20 @@ Rails.application.routes.draw do
     		patch  'prodinvest/:id',      to: 'product_invests#update'
     		delete 'prodinvest/:id',      to: 'product_invests#destroy'
 
-   #user_action product_invest_detail
-      	get    'proinvdetails',       to: 'product_invest_details#index'
-      	get    'proinvdetail/:id',    to: 'product_invest_details#show'
-      	post   'proinvdetail/create', to: 'product_invest_details#create'
-      	patch  'proinvdetail/:id',    to: 'product_invest_details#update'
-      	delete 'proinvdetail/:id',    to: 'product_invest_details#destroy'
+      #payment detail
+      
+      get 'payment_details', to: 'payment_details#index'
+      get 'payment_details/:id', to: 'payment_details#show'
+      post 'payment_details', to: 'payment_details#create'
+      patch 'payment_detail/:id', to: 'payment_details#update'
+
+      get    'popularproducts',     to: 'popular_products#index'
+      #user_action product_invest
+    	get    'prodinvests',         to: 'product_invests#index'
+    	get    'prodinvest/:id',      to: 'product_invests#show'
+    	post   'prodinvest/create',   to: 'product_invests#create'
+    	patch  'prodinvest/:id',      to: 'product_invests#update'
+    	delete 'prodinvest/:id',      to: 'product_invests#destroy'
 
         post 'password/forgot', to: 'passwords#forgot'
         post 'password/reset', to: 'passwords#reset'
@@ -42,4 +50,4 @@ Rails.application.routes.draw do
         delete 'userinvest/:id', to: 'user_investors#destroy'
     end
   end
-end 
+end
