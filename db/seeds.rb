@@ -9,7 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 @prov = Province.all
 @reg = Regional.all
-@kec = Kecamatan.all
+@kec = Subdistrict.all
 if @kec.present? && @prov.present? && @reg.present?
   puts "Error, you must to destroy your data on the table and please reset your id. \n example: ALTER SEQUENCE provinces_id_seq RESTART WITH 1 "
 else
@@ -30,10 +30,10 @@ else
     r.save
     puts row.to_hash
   end
-  csv_text = File.read(Rails.root.join('lib', 'seeds', 'kecamatan.csv'))
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'subdistrict.csv'))
   csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
   csv.each do |row|
-    r = Kecamatan.new
+    r = Subdistrict.new
     r.regional_id = row['regional_id']
     r.name = row['name']
     r.save
