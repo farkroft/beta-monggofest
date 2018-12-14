@@ -5,6 +5,7 @@ ruby '2.5.3'
 
 gem 'carrierwave'
 gem 'cloudinary', '~> 1.9.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
@@ -27,12 +28,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
+
+
+# gem 'bcrypt', '~> 3.1.7'
+
+
+
 gem 'active_model_serializers'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'knock'
 gem 'rack-cors'
 gem 'rubocop', '~> 0.60.0', require: false
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -66,6 +74,12 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+
+
+
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+
 gem 'cancan'
 gem 'devise'
 gem 'font-awesome-sass'
@@ -74,5 +88,6 @@ gem 'rack-cors'
 gem 'rails_admin'
 gem 'rails_admin_import', '~> 2.1'
 gem 'rails_admin_rollincode'
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'popper_js'

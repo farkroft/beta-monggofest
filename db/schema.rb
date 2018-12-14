@@ -35,22 +35,38 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.index ["product_id"], name: "index_pictures_on_product_id"
   end
 
+  create_table "product_invest_details", force: :cascade do |t|
+    t.bigint "product_invest_id"
+    t.text "description"
+    t.integer "period"
+    t.float "return_value"
+    t.integer "share_periode"
+    t.text "background"
+    t.integer "count_view", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_invest_id"], name: "index_product_invest_details_on_product_invest_id"
+  end
+
   create_table "product_invests", force: :cascade do |t|
     t.bigint "product_id"
     t.float "price"
     t.integer "slot"
-    t.integer "count_view", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_product_invests_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
+    t.bigint "regional_id"
+    t.bigint "province_id"
     t.bigint "subdistricts_id"
     t.integer "product_type", default: 0
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["province_id"], name: "index_products_on_province_id"
+    t.index ["regional_id"], name: "index_products_on_regional_id"
     t.index ["subdistricts_id"], name: "index_products_on_subdistricts_id"
   end
 
@@ -114,7 +130,10 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
 
   add_foreign_key "payment_details", "user_investors"
   add_foreign_key "pictures", "products"
+  add_foreign_key "product_invest_details", "product_invests"
   add_foreign_key "product_invests", "products"
+  add_foreign_key "products", "provinces"
+  add_foreign_key "products", "regionals"
   add_foreign_key "products", "subdistricts", column: "subdistricts_id"
   add_foreign_key "regionals", "provinces"
   add_foreign_key "subdistricts", "regionals"
