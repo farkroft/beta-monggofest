@@ -4,9 +4,10 @@ class CreateProductInvestDetails < ActiveRecord::Migration[5.2]
       t.references :product_invest, foreign_key: true
       t.text :description
       t.integer :period
-      t.integer :return_value
+      t.float :return_value
       t.integer :share_periode
       t.text :background
+      t.integer :count_view, default: 0
 
       t.timestamps
     end

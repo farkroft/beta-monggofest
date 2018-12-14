@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-
+require 'popper_js'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,7 +17,7 @@ module MonggoFest
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '*', headers: :any, methods: %i[get post options]
       end
     end
     # Settings in config/environments/* take precedence over those specified here.
