@@ -90,8 +90,4 @@ gem 'rails_admin_import', '~> 2.1'
 gem 'rails_admin_rollincode'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
+gem 'popper_js'
