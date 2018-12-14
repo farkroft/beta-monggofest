@@ -1,4 +1,4 @@
 class Province < ApplicationRecord
-    has_many :regionals
-    has_many :kecamatans, through: :regional
+  has_many :regionals, dependent: false
+  has_many :subdistcricts, through: :regionals
 end

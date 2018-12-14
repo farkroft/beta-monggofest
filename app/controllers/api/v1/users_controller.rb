@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < ApplicationController
-  before_action :authenticate_user, only: [:update]
+  #before_action :authenticate_user, only: [:update]
   # Should work if the current_user is authenticated.
   def index
     if current_user
