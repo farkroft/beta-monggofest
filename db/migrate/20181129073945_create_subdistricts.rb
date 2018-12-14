@@ -1,7 +1,7 @@
-class CreateKecamatans < ActiveRecord::Migration[5.2]
+class CreateSubdistricts < ActiveRecord::Migration[5.2]
   # frozen_string_literal: true
   def change
-    create_table :kecamatans do |t|
+    create_table :subdistricts do |t|
       t.references :regional, foreign_key: true
       t.string :name
 

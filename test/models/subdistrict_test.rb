@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class KecamatanTest < ActiveSupport::TestCase
+class SubdistrictTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -15,22 +15,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "gambars", force: :cascade do |t|
-    t.bigint "product_id"
-    t.string "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_gambars_on_product_id"
-  end
-
-  create_table "kecamatans", force: :cascade do |t|
-    t.bigint "regional_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["regional_id"], name: "index_kecamatans_on_regional_id"
-  end
-
   create_table "payment_details", force: :cascade do |t|
     t.bigint "user_investor_id"
     t.integer "payment_method"
@@ -43,11 +27,19 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.index ["user_investor_id"], name: "index_payment_details_on_user_investor_id"
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_pictures_on_product_id"
+  end
+
   create_table "product_invest_details", force: :cascade do |t|
     t.bigint "product_invest_id"
     t.text "description"
     t.integer "period"
-    t.integer "return_value"
+    t.float "return_value"
     t.integer "share_periode"
     t.text "background"
     t.integer "count_view", default: 0
@@ -66,16 +58,16 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.bigint "kecamatan_id"
     t.bigint "regional_id"
     t.bigint "province_id"
+    t.bigint "subdistricts_id"
     t.integer "product_type", default: 0
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kecamatan_id"], name: "index_products_on_kecamatan_id"
     t.index ["province_id"], name: "index_products_on_province_id"
     t.index ["regional_id"], name: "index_products_on_regional_id"
+    t.index ["subdistricts_id"], name: "index_products_on_subdistricts_id"
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -100,6 +92,14 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.boolean "isActive", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subdistricts", force: :cascade do |t|
+    t.bigint "regional_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["regional_id"], name: "index_subdistricts_on_regional_id"
   end
 
   create_table "user_investors", force: :cascade do |t|
@@ -128,15 +128,15 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.index ["email"], name: "index_users_on_email"
   end
 
-  add_foreign_key "gambars", "products"
-  add_foreign_key "kecamatans", "regionals"
   add_foreign_key "payment_details", "user_investors"
+  add_foreign_key "pictures", "products"
   add_foreign_key "product_invest_details", "product_invests"
   add_foreign_key "product_invests", "products"
-  add_foreign_key "products", "kecamatans"
   add_foreign_key "products", "provinces"
   add_foreign_key "products", "regionals"
+  add_foreign_key "products", "subdistricts", column: "subdistricts_id"
   add_foreign_key "regionals", "provinces"
+  add_foreign_key "subdistricts", "regionals"
   add_foreign_key "user_investors", "product_invests", column: "product_invests_id"
   add_foreign_key "user_investors", "users"
 end
