@@ -42196,3 +42196,374 @@ Completed 200 OK in 104ms (Views: 102.1ms | ActiveRecord: 0.0ms)
 >>>>>>> 21bf73560634017023796157fe3645090dc75c2e
 >>>>>>> adfca7a0f1bb75b50ea05939e09d82c8a3d077a0
 >>>>>>> 785385b4f3aa66f562a72cb429cc5b67cba51afb
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-14 17:08:20 +0700
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProvinces (20181129073812)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (398.5ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181129073812_create_provinces.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073812"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (55.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateRegionals (20181129073911)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (69.8ms)[0m  [1m[35mCREATE TABLE "regionals" ("id" bigserial primary key, "province_id" bigint, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_86c19baa1a"
+FOREIGN KEY ("province_id")
+  REFERENCES "provinces" ("id")
+)[0m
+  ↳ db/migrate/20181129073911_create_regionals.rb:3
+  [1m[35m (58.8ms)[0m  [1m[35mCREATE  INDEX  "index_regionals_on_province_id" ON "regionals"  ("province_id")[0m
+  ↳ db/migrate/20181129073911_create_regionals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073911"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateKecamatans (20181129073945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (65.8ms)[0m  [1m[35mCREATE TABLE "kecamatans" ("id" bigserial primary key, "regional_id" bigint, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_eb9fd12a70"
+FOREIGN KEY ("regional_id")
+  REFERENCES "regionals" ("id")
+)[0m
+  ↳ db/migrate/20181129073945_create_kecamatans.rb:3
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE  INDEX  "index_kecamatans_on_regional_id" ON "kecamatans"  ("regional_id")[0m
+  ↳ db/migrate/20181129073945_create_kecamatans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129073945"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductTypes (20181129074146)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (76.1ms)[0m  [1m[35mCREATE TABLE "product_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181129074146_create_product_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129074146"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProducts (20181129074243)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (66.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "kecamatan_id" bigint, "product_type_id" bigint, "name" character varying, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_652c924544"
+FOREIGN KEY ("kecamatan_id")
+  REFERENCES "kecamatans" ("id")
+, CONSTRAINT "fk_rails_8464b8e5d7"
+FOREIGN KEY ("product_type_id")
+  REFERENCES "product_types" ("id")
+)[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[35m (30.1ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_kecamatan_id" ON "products"  ("kecamatan_id")[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_product_type_id" ON "products"  ("product_type_id")[0m
+  ↳ db/migrate/20181129074243_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129074243"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductInvests (20181129092635)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "product_invests" ("id" bigserial primary key, "product_id" bigint, "price" float, "slot" integer, "count_view" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6aa2ac7487"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20181129092635_create_product_invests.rb:3
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE  INDEX  "index_product_invests_on_product_id" ON "product_invests"  ("product_id")[0m
+  ↳ db/migrate/20181129092635_create_product_invests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129092635"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProductInvestDetails (20181129092850)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (82.5ms)[0m  [1m[35mCREATE TABLE "product_invest_details" ("id" bigserial primary key, "product_invest_id" bigint, "description" text, "period" integer, "return_value" integer, "share_periode" integer, "background" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_326c5d8f80"
+FOREIGN KEY ("product_invest_id")
+  REFERENCES "product_invests" ("id")
+)[0m
+  ↳ db/migrate/20181129092850_create_product_invest_details.rb:3
+  [1m[35m (42.8ms)[0m  [1m[35mCREATE  INDEX  "index_product_invest_details_on_product_invest_id" ON "product_invest_details"  ("product_invest_id")[0m
+  ↳ db/migrate/20181129092850_create_product_invest_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181129092850"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateUserInvestors (20181205072620)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (43.7ms)[0m  [1m[35mCREATE TABLE "user_investors" ("id" bigserial primary key, "user_id" bigint, "product_invests_id" bigint, "investor_slot" integer, "investor_pay" float, "invest_year" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c692bc9a04"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_35dabd55ac"
+FOREIGN KEY ("product_invests_id")
+  REFERENCES "product_invests" ("id")
+)[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_user_id" ON "user_investors"  ("user_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[35m (227.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_investors_on_product_invests_id" ON "user_investors"  ("product_invests_id")[0m
+  ↳ db/migrate/20181205072620_create_user_investors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205072620"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (188.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreatePaymentDetails (20181210064716)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (471.6ms)[0m  [1m[35mCREATE TABLE "payment_details" ("id" bigserial primary key, "user_investor_id" bigint, "payment_method" integer, "card_number" character varying, "card_valid_date" date, "cvv" character varying, "isPaid" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8500a07cc3"
+FOREIGN KEY ("user_investor_id")
+  REFERENCES "user_investors" ("id")
+)[0m
+  ↳ db/migrate/20181210064716_create_payment_details.rb:3
+  [1m[35m (42.6ms)[0m  [1m[35mCREATE  INDEX  "index_payment_details_on_user_investor_id" ON "payment_details"  ("user_investor_id")[0m
+  ↳ db/migrate/20181210064716_create_payment_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181210064716"]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (51.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1066660602988844535)[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/bin/rake:23
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-14 17:08:50 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"fireint96@gmail.com", "password"=>{"email"=>"fireint96@gmail.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fireint96@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 17.2ms)
+
+
+  
+NoMethodError (undefined method `reset_password_token' for nil:NilClass):
+  
+app/controllers/api/v1/passwords_controller.rb:10:in `forgot'
+Started GET "/api/v1/all" for 127.0.0.1 at 2018-12-14 17:09:05 +0700
+Processing by Api::V1::HomeController#all as */*
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-14 17:09:33 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (20.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "a9bd142e6e6cb4d285a1"], ["reset_password_sent_at", "2018-12-14 10:09:33.480239"], ["updated_at", "2018-12-14 10:09:33.492057"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (77.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (1.7ms)
+UserMailer#reset_password: processed outbound mail in 1446.7ms
+Sent mail to refiqi@example.com (1519.9ms)
+Date: Fri, 14 Dec 2018 17:09:36 +0700
+From: Monggovest@gmail.com
+To: refiqi@example.com
+Message-ID: <5c13816084fd1_20122acd161fa7a844967@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get your password reset.
+  </p>
+  <p>
+  	https://monggovest-staging.herokuapp.com/password/reset=5f0ecde07aa7578009ae
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 4689ms (Views: 42.3ms | ActiveRecord: 109.4ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-14 17:12:08 +0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/refiqi/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "9cfe551083554b17d0a8"], ["reset_password_sent_at", "2018-12-14 10:12:08.702289"], ["updated_at", "2018-12-14 10:12:08.707054"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (1.2ms)
+UserMailer#reset_password: processed outbound mail in 38.2ms
+Sent mail to refiqi@example.com (1345.7ms)
+Date: Fri, 14 Dec 2018 17:12:08 +0700
+From: Monggovest@gmail.com
+To: refiqi@example.com
+Message-ID: <5c1381f8d7974_29af2b0480d559f864463@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get your password reset.
+  </p>
+  <p>
+  	https://monggovest-staging.herokuapp.com/password/reset=9cfe551083554b17d0a8
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 1603ms (Views: 17.4ms | ActiveRecord: 30.4ms)
+
+
+Started POST "/api/v1/password/forgot" for 127.0.0.1 at 2018-12-14 17:12:58 +0700
+Processing by Api::V1::PasswordsController#forgot as */*
+  Parameters: {"email"=>"refiqi@example.com", "password"=>{"email"=>"refiqi@example.com"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refiqi@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/passwords_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "refiqi@example.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "f5751b1a67e9d3192282"], ["reset_password_sent_at", "2018-12-14 10:12:58.994894"], ["updated_at", "2018-12-14 10:12:59.001610"], ["id", 2]]
+  ↳ app/models/user.rb:34
+  [1m[35m (64.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering user_mailer/reset_password.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password.html.erb within layouts/mailer (0.9ms)
+UserMailer#reset_password: processed outbound mail in 12.9ms
+Sent mail to refiqi@example.com (1318.5ms)
+Date: Fri, 14 Dec 2018 17:12:59 +0700
+From: Monggovest@gmail.com
+To: refiqi@example.com
+Message-ID: <5c13822b14e8c_29af2b0480d558e0645e3@RefiqiMF-Acer.mail>
+Subject: Token Password reset
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Monggovest.com, refiqi</h1>
+  <p>
+    Please Click the Mentioned Link below refiqi.<br>
+    To get your password reset.
+  </p>
+  <p>
+  	https://monggovest-staging.herokuapp.com/password/reset=f5751b1a67e9d3192282
+  </p>
+<p>Thanks for your time and have a great day!</p>
+  </body>
+</html>
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 1415ms (Views: 2.0ms | ActiveRecord: 67.0ms)
+
+

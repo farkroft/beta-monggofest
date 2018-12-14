@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 2018_12_10_064716) do
     t.index ["province_id"], name: "index_regionals_on_province_id"
   end
 
+  create_table "sliders", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "url"
+    t.integer "sort_number"
+    t.boolean "isActive", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_investors", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "product_invests_id"
