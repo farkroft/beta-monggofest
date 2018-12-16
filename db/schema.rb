@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
   create_table "subdistricts", force: :cascade do |t|
     t.bigint "regional_id"
     t.string "name"
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_142151) do
     t.index ["regional_id"], name: "index_subdistricts_on_regional_id"
   end
 
+>>>>>>> 3c9cbb62097bae1c19b59ab07239b7c32d3d92d3
   create_table "user_investors", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "product_invests_id"
